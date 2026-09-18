@@ -1,0 +1,101 @@
+# yaml-language-server: $schema=https://schema.buildwithfern.dev/docs-yml.json
+
+instances:
+  - url: legislature.docs.buildwithfern.com
+    edit-this-page:
+      github:
+        owner: fern-starter
+        repo: family-400693
+        branch: main
+      launch: dashboard
+title: legislature | Documentation
+layout:
+  searchbar-placement: header
+  page-width: full
+  tabs-placement: header
+tabs:
+  home:
+    display-name: Home
+    icon: home
+  API Reference:
+    display-name: API Reference
+    icon: puzzle
+  docs:
+    display-name: Docs
+    icon: book
+  changelog:
+    display-name: Changelog
+    icon: clock
+navigation:
+  - tab: home
+    layout:
+      - page: Home
+        path: docs/pages/welcome.mdx
+        slug: welcome
+  - tab: docs
+    layout:
+      - section: Get started
+        contents:
+          - page: Edit your docs
+            path: docs/pages/editing-your-docs.mdx
+            icon: fa-duotone fa-pen-to-square
+          - page: Write content
+            path: docs/pages/writing-content.mdx
+            icon: fa-duotone fa-file-lines
+          - page: Set up navigation
+            path: docs/pages/navigation.mdx
+            icon: fa-duotone fa-sitemap
+          - page: Customize your docs
+            path: docs/pages/customization.mdx
+            icon: fa-duotone fa-palette
+          - page: Support
+            path: docs/pages/support.mdx
+            icon: fa-duotone fa-headset
+  - tab: API Reference
+    layout:
+      - section: Overview
+        contents:
+          - page: API reference
+            path: docs/pages/api-reference-overview.mdx
+            icon: fa-duotone fa-book
+      - api: Swagger Plant Store - OpenAPI 3.1
+        api-name: example-openapi
+      - api: Plant Store AsyncAPI
+        api-name: example-asyncapi
+  - tab: changelog
+    layout:
+      - changelog: docs/changelog
+navbar-links:
+  - type: filled
+    text: Edit
+    url: https://dashboard.buildwithfern.com
+colors:
+  accent-primary:
+    light: "#2E6DA4"
+    dark: "#2E6DA4"
+  background:
+    light: "#F9FBFC"
+    dark: "#020508"
+  border:
+    light: "#CBD0D3"
+    dark: "#282D31"
+theme:
+  page-actions: toolbar
+  footer-nav: minimal
+  tabs: bubble
+logo:
+  dark: docs/assets/logo-dark.svg
+  light: docs/assets/logo.svg
+  height: 20
+  href: https://buildwithfern.com
+favicon: docs/assets/favicon.svg
+css:
+  - styles.css
+  - docs/assets/onboarding-theme.css
+js: custom.js
+typography:
+  headingsFont:
+    name: Inter
+  bodyFont:
+    name: Inter
+ai-search: {}
