@@ -1,95 +1,321 @@
-/* Custom styles for Fern Docs Starter */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
-/* Subtle linear gradient background */
-.fern-background-image {
-  background-image: linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, transparent) 0%, transparent 50%);
+/* USWDS site adapter. The official USWDS stylesheet is loaded before this file. */
+
+html,
+body,
+.fern-layout-page {
+  background: #ffffff !important;
+  color: #1b1b1b;
+  font-family: "Source Sans Pro", "Public Sans", Arial, sans-serif;
 }
 
-/* WebGL mesh gradient canvas */
-.mesh-gradient-canvas {
+.fern-layout-page,
+.fern-main,
+.fern-page-content {
+  background: #ffffff;
+}
+
+.fern-page-content {
+  max-width: 75rem;
+}
+
+.fern-page-content :where(h1, h2, h3, h4) {
+  color: #1b1b1b;
+  font-family: "Merriweather", Georgia, serif;
+}
+
+.fern-page-content :where(p, li) {
+  color: #454545;
+}
+
+.fern-page-content a {
+  color: #005ea2;
+}
+
+.fern-page-content a:hover {
+  color: #1a4480;
+}
+
+.fern-card,
+.fern-page-content pre,
+.fern-page-content table {
+  border-color: #dfe1e2;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.fern-page-content :focus-visible {
+  outline: .25rem solid #2491ff;
+  outline-offset: .2rem;
+}
+
+/* Site-status language uses the USWDS banner component without an official-government claim. */
+.research-site-banner {
+  border-bottom: 1px solid #dfe1e2;
+  background: #f0f0f0;
+  color: #1b1b1b;
+}
+
+.research-site-banner .usa-banner__inner {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: .4rem 1rem;
+}
+
+.research-site-banner .usa-banner__header-text p {
+  margin: 0;
+  font-size: .8rem;
+  line-height: 1.3;
+}
+
+/* Fern header adapted to the USWDS header surface. */
+.fern-layout-page header {
+  border-bottom: 1px solid #dfe1e2;
+  background: #ffffff !important;
+}
+
+.fern-header-content .fern-header-search-bar,
+#fern-ask-ai-button,
+.fern-header-mobile-menu-button > button {
+  border-color: #565c65 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#fern-ask-ai-button {
+  background: #005ea2 !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 640px) {
+  .fern-page-content { padding-inline: 1rem; }
+}
+
+/* USWDS layout primitives in Fern's content shell. */
+.fern-page-content > .usa-card-group {
+  margin: 2rem -1rem;
+}
+
+.fern-page-content .usa-card {
+  margin-bottom: 1.5rem;
+}
+
+.fern-page-content .usa-card__container {
+  min-height: 9rem;
+  border-color: #a9aeb1;
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.16), 0 1px 2px rgba(0,0,0,.08);
+}
+
+.fern-page-content .usa-card__header {
+  display: flex;
+  height: 100%;
+  align-items: end;
+  padding: 1.5rem;
+}
+
+.fern-page-content .usa-card__heading {
+  margin: 0;
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.fern-page-content .usa-card__heading a {
+  color: #005ea2;
+  text-decoration: none;
+}
+
+.fern-page-content .usa-card__heading a:hover {
+  color: #1a4480;
+  text-decoration: underline;
+}
+
+/* USWDS bills catalog layout. */
+.bill-catalog { margin-top: 2rem; }
+.bill-catalog .usa-select,
+.bill-catalog .usa-input { max-width: none; }
+.bill-catalog__toolbar { display: flex; align-items: center; justify-content: space-between; margin-block: 2rem 1rem; padding-block: 1rem; border-block: 1px solid #dfe1e2; }
+.bill-catalog__toolbar p { margin: 0; }
+.bill-catalog__results { margin-top: 0; }
+.bill-catalog__item { display: block; height: 100%; color: inherit; text-decoration: none; }
+.bill-catalog__item:hover { background: #f0f0f0; }
+.bill-catalog__item .usa-card__heading { color: #005ea2; font-family: "Merriweather", Georgia, serif; font-size: 1rem; line-height: 1.4; }
+.bill-catalog__item .usa-card__body p { color: #454545; }
+.bill-catalog__item .usa-card__footer { display: flex; gap: .5rem; flex-wrap: wrap; }
+.bill-catalog [data-bill-more] { margin-top: 1rem; }
+
+/* Card destinations are identified by the card itself, never blue underlined text. */
+.fern-page-content .usa-card__container,
+.fern-page-content .usa-card__container:hover,
+.fern-page-content .bill-catalog__item,
+.fern-page-content .bill-catalog__item:hover {
+  color: #1b1b1b;
+  text-decoration: none !important;
+}
+
+.fern-page-content .bill-catalog__item .usa-card__heading {
+  color: #1b1b1b;
+}
+
+/* USWDS card structure: header and body remain separate regions. */
+.fern-page-content .usa-card__container { display: flex; flex-direction: column; }
+.fern-page-content .usa-card__header { display: block; height: auto; padding: 1.5rem 1.5rem 0; }
+.fern-page-content .usa-card__body { padding: .75rem 1.5rem 1.5rem; }
+.fern-page-content .usa-card__body p { margin: 0; }
+.fern-page-content .usa-card__header:only-child { margin-top: auto; padding-bottom: 1.5rem; }
+
+/* USWDS card media. */
+.fern-page-content .usa-card__media { aspect-ratio: 16 / 8; overflow: hidden; }
+.fern-page-content .usa-card__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Abstract collection art. */
+.library-card-art { position: relative; background: #f0f0f0; }
+.library-card-art::before,
+.library-card-art::after { position: absolute; content: ""; }
+.library-card-art--code { background: linear-gradient(135deg, #d9e8f6 0%, #ffffff 52%, #a8c9e8 100%); }
+.library-card-art--code::before { width: 44%; height: 140%; left: 18%; top: -28%; background: rgba(0,94,162,.25); transform: rotate(27deg); }
+.library-card-art--code::after { width: 11%; height: 100%; right: 17%; background: rgba(0,94,162,.6); }
+.library-card-art--rules { background: linear-gradient(135deg, #f8f4ea, #ffffff 48%, #e6e0d4); }
+.library-card-art--rules::before { width: 58%; height: 58%; left: 21%; top: 21%; border: 2px solid #565c65; transform: rotate(45deg); }
+.library-card-art--records { background: linear-gradient(135deg, #e1f3ef, #ffffff 50%, #b9ddd4); }
+.library-card-art--records::before { width: 17%; height: 17%; left: 22%; top: 25%; border-radius: 50%; background: #216e61; box-shadow: 160% 160% 0 #216e61; }
+.library-card-art--records::after { width: 46%; height: 2px; right: 16%; top: 50%; background: #216e61; box-shadow: 0 18px 0 #216e61, 0 -18px 0 #216e61; }
+
+/* Landing page */
+body:has(.landing-hero) #fern-sidebar,
+body:has(.landing-hero) #fern-toc,
+body:has(.landing-hero) #fern-footer { display: none !important; }
+
+body:has(.landing-hero) #fern-header,
+body:has(.landing-hero) header,
+body:has(.landing-hero) .fern-header,
+body:has(.landing-hero) nav,
+body:has(.landing-hero) .fern-layout-page > header {
+  background: #1c1c1e !important;
+  background-color: #1c1c1e !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+body:has(.landing-hero) #fern-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+}
+
+body:has(.landing-hero),
+body:has(.landing-hero) .fern-layout-page,
+body:has(.landing-hero) .fern-main,
+body:has(.landing-hero) .fern-page-content {
+  background: #1c1c1e !important;
+  overflow: hidden;
+}
+
+body:has(.landing-hero) .fern-page-content {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.landing-hero {
+  position: fixed;
+  inset: 0;
   z-index: 0;
+  background: #1c1c1e;
 }
 
-/* Animated film grain overlay */
-.fern-background-image::after {
-  content: '';
+.landing-hero__overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  opacity: 0.1;
-  pointer-events: none;
-  animation: grain 3s steps(10) infinite;
-}
-
-@keyframes grain {
-  0%, 100% { background-position: 0 0; }
-  10% { background-position: -50px -100px; }
-  20% { background-position: -150px 50px; }
-  30% { background-position: 70px -250px; }
-  40% { background-position: -50px 250px; }
-  50% { background-position: -150px 100px; }
-  60% { background-position: 150px 0; }
-  70% { background-position: 0 150px; }
-  80% { background-position: 30px 350px; }
-  90% { background-position: -100px 100px; }
-}
-
-/* Nebula WebGL background */
-.background-graphic-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.background-graphic-wrapper canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* Center header tabs (replaces the Ledger-rejected theme.tabs.alignment: center) */
-.fern-header-tabs {
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 0 clamp(2rem, 8vw, 6rem);
+  padding-top: 5rem;
 }
 
-/* Welcome page: extra spacing around header and action buttons */
-.fern-layout-overview article > header {
-  padding-top: 4rem;
-  text-align: center;
+.landing-hero__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.fern-layout-overview article > header > div:first-child {
-  justify-content: center;
-}
-
-.fern-layout-overview article > header h1 {
-  font-size: 3rem;
-}
-
-.welcome-help {
   text-align: center;
+  width: min(100%, 72rem);
 }
 
-.welcome-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: -1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 4rem;
+.landing-hero__title {
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 2rem;
 }
+
+.landing-hero__search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 32rem;
+  padding: 1.125rem 1.375rem;
+  margin-bottom: 2rem;
+  background: #2c2c2e;
+  border: none;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-align: left;
+}
+.landing-hero__search:hover,
+.landing-hero__search:focus-visible {
+  background: #3a3a3c;
+  outline: none;
+}
+
+.landing-hero__search-icon { opacity: 0.5; flex-shrink: 0; }
+.landing-hero__search-placeholder { color: #ffffff; opacity: 0.55; }
+.landing-hero__search-kbd { margin-left: auto; opacity: 0.3; font-size: 0.75rem; font-family: inherit; }
+
+.landing-hero__badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.landing-hero__badge-row {
+  display: flex;
+  gap: 0.65rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 9999px;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: filter 0.15s;
+  white-space: nowrap;
+}
+.landing-hero__badge:hover { filter: brightness(1.2); }
+
+.badge--1 { background: #7b2d42; }
+.badge--2 { background: #8b3a20; }
+.badge--3 { background: #7a4a10; }
+.badge--4 { background: #3d2a6e; }
+.badge--5 { background: #1e4d6b; }
+.badge--6 { background: #1a5c3a; }
