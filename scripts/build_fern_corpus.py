@@ -13,6 +13,7 @@ import shutil
 from pathlib import Path
 
 OFFICIAL_CODES_URL = "https://leginfo.legislature.ca.gov/faces/codes.xhtml"
+REPO_ASSET_URL = "https://github.com/saintus-create/family-400693/blob/main/fern/docs/assets/corpus"
 
 
 def slug(value: str) -> str:
@@ -40,8 +41,8 @@ This page is the Fern catalog entry for the `{abbr}` dataset. The complete secti
 
 ## Files
 
-- [Download the `{filename}` dataset](/assets/corpus/law/{filename})
-- [Download the corpus manifest](/assets/corpus/manifest.json)
+- [Download the `{filename}` dataset]({REPO_ASSET_URL}/law/{filename})
+- [Download the corpus manifest]({REPO_ASSET_URL}/manifest.json)
 - [Browse the official California code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml)
 
 ## Record format
