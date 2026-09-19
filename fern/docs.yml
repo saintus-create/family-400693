@@ -62,8 +62,219 @@ navigation:
             path: docs/pages/codes/elec.mdx
           - page: Evidence Code
             path: docs/pages/codes/evid.mdx
-          - page: Family Code
+          - section: Family Code
             path: docs/pages/codes/fam.mdx
+            contents:
+              - section: "Division 1. Preliminary Provisions and Definitions"
+                contents:
+                  - page: "Part 1. Preliminary Provisions"
+                    path: docs/pages/codes/fam/division-1-part-1.mdx
+                  - page: "Part 2. Definitions"
+                    path: docs/pages/codes/fam/division-1-part-2.mdx
+                  - page: "Part 3. Indian Children"
+                    path: docs/pages/codes/fam/division-1-part-3.mdx
+              - section: "Division 2. General Provisions"
+                contents:
+                  - page: "Part 1. Jurisdiction"
+                    path: docs/pages/codes/fam/division-2-part-1.mdx
+                  - page: "Part 2. General Procedural Provisions"
+                    path: docs/pages/codes/fam/division-2-part-2.mdx
+                  - page: "Part 3. Temporary Restraining Order in Summons"
+                    path: docs/pages/codes/fam/division-2-part-3.mdx
+                  - page: "Part 4. Ex Parte Temporary Restraining Orders"
+                    path: docs/pages/codes/fam/division-2-part-4.mdx
+                  - page: "Part 5. Attorney's Fees and Costs"
+                    path: docs/pages/codes/fam/division-2-part-5.mdx
+                  - page: "Part 6. Enforcement of Judgments and Orders"
+                    path: docs/pages/codes/fam/division-2-part-6.mdx
+                  - page: "Part 7. Tribal Marriages and Divorces"
+                    path: docs/pages/codes/fam/division-2-part-7.mdx
+              - section: "Division 2.5. Domestic Partner Registration"
+                contents:
+                  - page: "Part 1. Definitions"
+                    path: docs/pages/codes/fam/division-2-5-part-1.mdx
+                  - page: "Part 2. Registration"
+                    path: docs/pages/codes/fam/division-2-5-part-2.mdx
+                  - page: "Part 3. Termination"
+                    path: docs/pages/codes/fam/division-2-5-part-3.mdx
+                  - page: "Part 5. Preemption"
+                    path: docs/pages/codes/fam/division-2-5-part-5.mdx
+              - section: "Division 3. Marriage"
+                contents:
+                  - page: "Part 1. Validity of Marriage"
+                    path: docs/pages/codes/fam/division-3-part-1.mdx
+                  - page: "Part 2. Marriage License"
+                    path: docs/pages/codes/fam/division-3-part-2.mdx
+                  - page: "Part 3. Solemnization of Marriage"
+                    path: docs/pages/codes/fam/division-3-part-3.mdx
+                  - page: "Part 4. Confidential Marriage"
+                    path: docs/pages/codes/fam/division-3-part-4.mdx
+                  - page: "Part 5. Remote Marriage License Issuance and Solemnization"
+                    path: docs/pages/codes/fam/division-3-part-5.mdx
+              - section: "Division 4. Rights and Obligations During Marriage"
+                contents:
+                  - page: "Part 1. General Provisions"
+                    path: docs/pages/codes/fam/division-4-part-1.mdx
+                  - page: "Part 2. Characterization of Marital Property"
+                    path: docs/pages/codes/fam/division-4-part-2.mdx
+                  - page: "Part 3. Liability of Marital Property"
+                    path: docs/pages/codes/fam/division-4-part-3.mdx
+                  - page: "Part 4. Management and Control of Marital Property"
+                    path: docs/pages/codes/fam/division-4-part-4.mdx
+                  - page: "Part 5. Marital Agreements"
+                    path: docs/pages/codes/fam/division-4-part-5.mdx
+              - section: "Division 5. Conciliation Proceedings"
+                contents:
+                  - page: "Part 1. Family Conciliation Court Law"
+                    path: docs/pages/codes/fam/division-5-part-1.mdx
+                  - page: "Part 2. Statewide Coordination of Family Mediation and Conciliation Services"
+                    path: docs/pages/codes/fam/division-5-part-2.mdx
+              - section: "Division 6. Nullity, Dissolution, and Legal Separation"
+                contents:
+                  - page: "Part 1. General Provisions"
+                    path: docs/pages/codes/fam/division-6-part-1.mdx
+                  - page: "Part 2. Judicial Determination of Void or Voidable Marriage"
+                    path: docs/pages/codes/fam/division-6-part-2.mdx
+                  - page: "Part 3. Dissolution of Marriage and Legal Separation"
+                    path: docs/pages/codes/fam/division-6-part-3.mdx
+              - section: "Division 7. Division of Property"
+                contents:
+                  - page: "Part 1. Definitions"
+                    path: docs/pages/codes/fam/division-7-part-1.mdx
+                  - page: "Part 2. General Provisions"
+                    path: docs/pages/codes/fam/division-7-part-2.mdx
+                  - page: "Part 3. Presumption Concerning Property Held in Joint Form"
+                    path: docs/pages/codes/fam/division-7-part-3.mdx
+                  - page: "Part 4. Special Rules for Division of Community Estate"
+                    path: docs/pages/codes/fam/division-7-part-4.mdx
+                  - page: "Part 5. Retirement Plan Benefits"
+                    path: docs/pages/codes/fam/division-7-part-5.mdx
+                  - page: "Part 6. Debts and Liabilities"
+                    path: docs/pages/codes/fam/division-7-part-6.mdx
+                  - page: "Part 7. Reimbursements"
+                    path: docs/pages/codes/fam/division-7-part-7.mdx
+                  - page: "Part 8. Jointly Held Separate Property"
+                    path: docs/pages/codes/fam/division-7-part-8.mdx
+                  - page: "Part 9. Real Property Located in Another State"
+                    path: docs/pages/codes/fam/division-7-part-9.mdx
+              - section: "Division 8. Custody of Children"
+                contents:
+                  - page: "Part 1. Definitions and General Provisions"
+                    path: docs/pages/codes/fam/division-8-part-1.mdx
+                  - page: "Part 2. Right to Custody of Minor Child"
+                    path: docs/pages/codes/fam/division-8-part-2.mdx
+                  - page: "Part 3. Uniform Child Custody Jurisdiction and Enforcement Act"
+                    path: docs/pages/codes/fam/division-8-part-3.mdx
+              - section: "Division 9. Support"
+                contents:
+                  - page: "Part 1. Definitions and General Provisions"
+                    path: docs/pages/codes/fam/division-9-part-1.mdx
+                  - page: "Part 2. Child Support"
+                    path: docs/pages/codes/fam/division-9-part-2.mdx
+                  - page: "Part 3. Spousal Support"
+                    path: docs/pages/codes/fam/division-9-part-3.mdx
+                  - page: "Part 4. Support of Parents"
+                    path: docs/pages/codes/fam/division-9-part-4.mdx
+                  - page: "Part 5. Enforcement of Support Orders"
+                    path: docs/pages/codes/fam/division-9-part-5.mdx
+                  - page: "Part 6. Uniform Interstate Family Support Act"
+                    path: docs/pages/codes/fam/division-9-part-6.mdx
+              - section: "Division 10. Prevention of Domestic Violence"
+                contents:
+                  - page: "Part 1. Short Title and Definitions"
+                    path: docs/pages/codes/fam/division-10-part-1.mdx
+                  - page: "Part 2. General Provisions"
+                    path: docs/pages/codes/fam/division-10-part-2.mdx
+                  - page: "Part 3. Emergency Protective Orders"
+                    path: docs/pages/codes/fam/division-10-part-3.mdx
+                  - page: "Part 4. Protective Orders and Other Domestic Violence Prevention Orders"
+                    path: docs/pages/codes/fam/division-10-part-4.mdx
+                  - page: "Part 5. Uniform Interstate Enforcement of Domestic Violence Protection Orders Act"
+                    path: docs/pages/codes/fam/division-10-part-5.mdx
+                  - page: "Part 6. Uniform Recognition and Enforcement of Canadian Domestic Violence Protection Orders Act"
+                    path: docs/pages/codes/fam/division-10-part-6.mdx
+              - section: "Division 11. Minors"
+                contents:
+                  - page: "Part 1. Age of Majority"
+                    path: docs/pages/codes/fam/division-11-part-1.mdx
+                  - page: "Part 1.5. Caregivers"
+                    path: docs/pages/codes/fam/division-11-part-1-5.mdx
+                  - page: "Part 2. Rights and Liabilities; Civil Actions and Proceedings"
+                    path: docs/pages/codes/fam/division-11-part-2.mdx
+                  - page: "Part 2.5. Online Platforms"
+                    path: docs/pages/codes/fam/division-11-part-2-5.mdx
+                  - page: "Part 3. Contracts"
+                    path: docs/pages/codes/fam/division-11-part-3.mdx
+                  - page: "Part 4. Medical Treatment"
+                    path: docs/pages/codes/fam/division-11-part-4.mdx
+                  - page: "Part 5. Enlistment in Armed Forces"
+                    path: docs/pages/codes/fam/division-11-part-5.mdx
+                  - page: "Part 6. Emancipation of Minors Law"
+                    path: docs/pages/codes/fam/division-11-part-6.mdx
+              - section: "Division 12. Parent and Child Relationship"
+                contents:
+                  - page: "Part 1. Rights of Parents"
+                    path: docs/pages/codes/fam/division-12-part-1.mdx
+                  - page: "Part 2. Presumption Concerning Child of Marriage and Genetic Testing to Determine Parentage"
+                    path: docs/pages/codes/fam/division-12-part-2.mdx
+                  - page: "Part 3. Uniform Parentage Act"
+                    path: docs/pages/codes/fam/division-12-part-3.mdx
+                  - page: "Part 4. Freedom From Parental Custody and Control"
+                    path: docs/pages/codes/fam/division-12-part-4.mdx
+                  - page: "Part 5. Interstate Compact on Placement of Children"
+                    path: docs/pages/codes/fam/division-12-part-5.mdx
+                  - page: "Part 6. Foster Care Placement Considerations"
+                    path: docs/pages/codes/fam/division-12-part-6.mdx
+                  - page: "Part 7. Surrogacy and Donor Facilitators, Assisted Reproduction Agreements for Gestational Carriers, and Oocyte Donations"
+                    path: docs/pages/codes/fam/division-12-part-7.mdx
+              - section: "Division 13. Adoption"
+                contents:
+                  - page: "Part 1. Definitions"
+                    path: docs/pages/codes/fam/division-13-part-1.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 1. General Provisions"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-1.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 2. Agency Adoptions"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-2.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 2.5. Adoptions by Relative Caregivers or Foster Parents"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-2-5.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 3. Independent Adoptions"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-3.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 4. Intercountry Adoptions"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-4.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 5. Stepparent Adoptions"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-5.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 6. Vacation of Adoption"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-6.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 7. Disclosure of Information"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-7.mdx
+                  - page: "Part 2. Adoption of Unmarried Minors — Chapter 8. Adoption Proceedings: Conflict of Laws"
+                    path: docs/pages/codes/fam/division-13-part-2-chapter-8.mdx
+                  - page: "Part 3. Adoption of Adults and Married Minors"
+                    path: docs/pages/codes/fam/division-13-part-3.mdx
+              - section: "Division 14. Family Law Facilitator Act"
+                contents:
+                  - page: "Family Law Facilitator Act"
+                    path: docs/pages/codes/fam/division-14.mdx
+              - section: "Division 17. Support Services"
+                contents:
+                  - page: "Chapter 1. Department of Child Support Services"
+                    path: docs/pages/codes/fam/division-17-chapter-1.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 1. Support Obligations"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-1.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 1.5. Delinquent Child Support Obligations and Financial Institution Data Match"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-1-5.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 2. Collections and Enforcement"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-2.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 3. Program Compliance"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-3.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 4. Program Costs"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-4.mdx
+                  - page: "Chapter 5. Complaint Resolution"
+                    path: docs/pages/codes/fam/division-17-chapter-5.mdx
+              - section: "Division 20. Pilot Projects"
+                contents:
+                  - page: "Part 1. Family Law Pilot Projects"
+                    path: docs/pages/codes/fam/division-20-part-1.mdx
           - page: Financial Code
             path: docs/pages/codes/fin.mdx
           - page: Fish and Game Code
