@@ -319,3 +319,20 @@ body:has(.landing-hero) .fern-page-content {
 .badge--4 { background: #3d2a6e; }
 .badge--5 { background: #1e4d6b; }
 .badge--6 { background: #1a5c3a; }
+
+/* Corpus search: compact progressive disclosure for the full statutory library. */
+.corpus-search { margin: 2rem 0; padding: 1.25rem; border: 1px solid #cbd0d3; border-radius: .5rem; background: #f5f8fa; }
+.corpus-search form { display: grid; grid-template-columns: minmax(12rem, .7fr) minmax(18rem, 1.6fr) auto; gap: .5rem .75rem; align-items: end; }
+.corpus-search label { grid-row: 1; font-weight: 600; }
+.corpus-search label + select, .corpus-search label + input { grid-row: 2; }
+.corpus-search select, .corpus-search input { min-height: 2.65rem; padding: .55rem .7rem; border: 1px solid #8b929a; border-radius: .25rem; background: #fff; color: inherit; }
+.corpus-search button { min-height: 2.65rem; padding: .55rem 1rem; border: 0; border-radius: .25rem; background: #005a8c; color: #fff; font-weight: 650; cursor: pointer; }
+.corpus-search button:hover { background: #003f63; }
+.corpus-search__status { margin: 1rem 0 .5rem; color: #505a64; }
+.corpus-search__results { margin: 0; padding-left: 1.5rem; }
+.corpus-search__results li { margin: 1rem 0 1.25rem; padding-left: .35rem; }
+.corpus-search__results h3 { margin: 0 0 .2rem; font-size: 1.05rem; }
+.corpus-search__results p { margin: .3rem 0; }
+.corpus-search__results small { display: block; color: #5f6872; }
+.corpus-search__meta { font-size: .88rem; color: #5f6872; }
+@media (max-width: 760px) { .corpus-search form { grid-template-columns: 1fr; } .corpus-search label { grid-row: auto; } .corpus-search label + select, .corpus-search label + input { grid-row: auto; } }
