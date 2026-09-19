@@ -1,0 +1,39 @@
+---
+title: Search the California Code Corpus
+description: Search all 30 California codes and the California Constitution by citation, hierarchy, or statutory text.
+slug: codes/search
+---
+
+# Search the California Code Corpus
+
+<div class="corpus-search-anchor"></div>
+
+Search the complete section-level snapshot by code, section citation, heading, hierarchy path, or statutory text. Results are ranked with exact citations and phrase matches first. Select **All codes** for a broad search, or choose one code for a faster targeted search.
+
+<Note>
+This is a dated research snapshot. Treat results as research leads, confirm the current text and effective date at the [official California Legislative Information code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml), and do not treat this library as legal advice.
+</Note>
+
+<div class="corpus-search" data-corpus-search>
+  <form data-corpus-form>
+    <label for="corpus-code">Code</label>
+    <select id="corpus-code" data-corpus-code>
+      <option value="">All codes</option>
+    </select>
+    <label for="corpus-query">Search terms or citation</label>
+    <input id="corpus-query" data-corpus-query type="search" placeholder="e.g. FAM § 300, child custody, public records" autocomplete="off" required />
+    <button type="submit">Search corpus</button>
+  </form>
+  <p class="corpus-search__status" data-corpus-status>Loading the corpus catalog…</p>
+  <ol class="corpus-search__results" data-corpus-results></ol>
+</div>
+
+## Search behavior
+
+Use a code abbreviation such as `FAM`, a full code name such as “Family Code,” an exact citation such as `GOV § 6250`, or ordinary terms from the provision you are researching. The search reads only the selected compressed datasets, ranks results locally, and shows the strongest matches without placing the entire corpus into a model context window.
+
+For AI-assisted research, use the result citations as the evidence set: ask for a broad explanation when needed, request comparisons explicitly, and require the answer to distinguish quoted text, paraphrase, inference, and uncertainty.
+
+## Corpus coverage
+
+The catalog includes the California Constitution and all 29 statutory codes packaged in the [corpus manifest](/assets/corpus/manifest.json). Each code page links to its complete JSONL dataset and provenance metadata.
