@@ -1,21 +1,40 @@
-<br/>
-<div align="center">
-  <a href="https://www.buildwithfern.com/?utm_source=github&utm_medium=readme&utm_campaign=fern&utm_content=logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="/fern/docs/assets/fern-logo-white.svg">
-      <source media="(prefers-color-scheme: light)" srcset="/fern/docs/assets/fern-logo-primary.svg">
-      <img alt="logo" src="/fern/docs/assets/fern-logo-primary.svg" height="50" align="center">
-    </picture>
-  </a>
-  
-  <br/>
-  
-# Docs starter template for FTUX
+# CA Leg Info
 
-This is the internal starter template cloned when a user creates a new docs site through the FTUX dashboard flow. It ships with a sample Plant Store API so new users have working documentation out of the box.
+Documentation for **CA Leg Info**, a curated starting point for navigating California legislative, judicial, and public-record information.
 
-The docs starter template for CLI users is still at [fern-api/docs-starter](https://github.com/fern-api/docs-starter).
+The site is built with [Fern](https://buildwithfern.com/) and keeps the homepage in `fern/docs/pages/welcome.mdx`. The homepage is intentionally preserved as a custom landing page; supporting destinations live alongside it as ordinary MDX pages.
 
-## Making changes to this template
+## Repository layout
 
-Any changes here affect what every new user gets when they create a docs site from the dashboard. Test locally with `fern docs dev` and `fern check` before merging.
+| Path | Purpose |
+| --- | --- |
+| `fern/docs/pages/` | Human-authored documentation pages |
+| `fern/docs.yml` | Navigation, branding, and site configuration |
+| `fern/styles.css` | Site-wide visual system and accessible focus states |
+| `fern/custom.js` | Site-wide client-side behavior |
+| `fern/openapi.yaml` | Existing OpenAPI reference source |
+| `fern/asyncapi.yaml` | Existing AsyncAPI reference source |
+| `.github/workflows/` | Automated validation and publishing workflows |
+
+## Local development
+
+Install the [Fern CLI](https://buildwithfern.com/learn/docs/cli/cli-overview), then run:
+
+```bash
+fern check
+fern docs dev
+```
+
+`fern check` is the required pre-commit validation. The GitHub Actions check runs it for pull requests and pushes to `main`.
+
+## Content guidelines
+
+- Prefer first-party California sources for links and citations.
+- Include the access date when recording time-sensitive research.
+- Distinguish proposed legislation, enacted statutes, operative provisions, and court opinions.
+- Do not present general information as legal advice.
+- Preserve the homepage and existing API source files unless a deliberate content migration is requested.
+
+## Scope
+
+CA Leg Info is an information and navigation resource. It does not provide legal advice, form an attorney-client relationship, or guarantee that linked material is current or complete.

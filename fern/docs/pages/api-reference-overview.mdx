@@ -1,10 +1,10 @@
 ---
-title: API reference
-subtitle: Interactive documentation generated from your API specification
+title: API reference sources
+subtitle: Interactive documentation generated from the repository's API specifications
 slug: api-reference
 ---
 
-Fern automatically generates interactive API reference documentation from your API specification. This starter template includes a sample Plant Store API to demonstrate the feature.
+Fern automatically generates interactive API reference documentation from the OpenAPI and AsyncAPI sources retained in this repository. These references are separate from the legal-information pages and are not altered by the content refactor.
 
 ## Supported specifications
 
@@ -51,7 +51,7 @@ Control how your API reference appears using the `api` configuration in `docs.ym
 ```yaml title="docs.yml"
 navigation:
   - api: API Reference
-    api-name: plantstore
+    api-name: example-openapi
     paginated: true
 ```
 
@@ -69,11 +69,11 @@ If you generate SDKs with Fern, code snippets automatically appear in your API r
 groups:
   python-sdk:
     generators:
-      - name: fernapi/fern-python-sdk
+          - name: fernapi/fern-python-sdk
         version: 4.3.1
         output:
           location: pypi
-          package-name: plantstore
+          package-name: example-sdk
 ```
 
 <Note>

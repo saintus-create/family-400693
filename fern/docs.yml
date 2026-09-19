@@ -4,15 +4,15 @@ instances:
   - url: legislature.docs.buildwithfern.com
     edit-this-page:
       github:
-        owner: fern-starter
+        owner: saintus-create
         repo: family-400693
         branch: main
       launch: dashboard
-title: legislature | Documentation
 layout:
   searchbar-placement: header
   page-width: full
   tabs-placement: header
+title: CA Leg Info | Documentation
 tabs:
   home:
     display-name: Home
@@ -34,33 +34,41 @@ navigation:
         slug: welcome
   - tab: docs
     layout:
-      - section: Get started
+      - section: Legal library
         contents:
-          - page: Edit your docs
-            path: docs/pages/editing-your-docs.mdx
-            icon: fa-duotone fa-pen-to-square
-          - page: Write content
-            path: docs/pages/writing-content.mdx
-            icon: fa-duotone fa-file-lines
-          - page: Set up navigation
-            path: docs/pages/navigation.mdx
-            icon: fa-duotone fa-sitemap
-          - page: Customize your docs
-            path: docs/pages/customization.mdx
-            icon: fa-duotone fa-palette
+          - page: Family Code
+            path: docs/pages/family-code-overview.mdx
+            icon: fa-duotone fa-people-roof
+          - page: Court Rules
+            path: docs/pages/court-rules-overview.mdx
+            icon: fa-duotone fa-scale-balanced
+          - page: Case Law
+            path: docs/pages/case-law.mdx
+            icon: fa-duotone fa-landmark
+          - page: Bills and Measures
+            path: docs/pages/bills-and-measures.mdx
+            icon: fa-duotone fa-file-signature
+          - page: Invitations to Comment
+            path: docs/pages/invitations-to-comment.mdx
+            icon: fa-duotone fa-comments
+      - section: Research
+        contents:
+          - page: Public Records
+            path: docs/pages/library/public-records/public-records.mdx
+            icon: fa-duotone fa-folder-open
           - page: Support
             path: docs/pages/support.mdx
-            icon: fa-duotone fa-headset
+            icon: fa-duotone fa-circle-question
   - tab: API Reference
     layout:
-      - section: Overview
+      - section: Existing references
         contents:
-          - page: API reference
+          - page: API reference sources
             path: docs/pages/api-reference-overview.mdx
             icon: fa-duotone fa-book
-      - api: Swagger Plant Store - OpenAPI 3.1
+      - api: OpenAPI reference
         api-name: example-openapi
-      - api: Plant Store AsyncAPI
+      - api: AsyncAPI reference
         api-name: example-asyncapi
   - tab: changelog
     layout:
@@ -71,8 +79,8 @@ navbar-links:
     url: https://dashboard.buildwithfern.com
 colors:
   accent-primary:
-    light: "#2E6DA4"
-    dark: "#2E6DA4"
+    light: "#005A8C"
+    dark: "#78B7F2"
   background:
     light: "#F9FBFC"
     dark: "#020508"
@@ -87,7 +95,7 @@ logo:
   dark: docs/assets/logo-dark.svg
   light: docs/assets/logo.svg
   height: 20
-  href: https://buildwithfern.com
+  href: https://leginfo.legislature.ca.gov/
 favicon: docs/assets/favicon.svg
 css:
   - styles.css
