@@ -13,14 +13,18 @@ hide-toc: true
   <div className="landing-hero__inner">
     <h1 className="landing-hero__title">CA. Leg. Info</h1>
 
-    <button type="button" className="landing-hero__search" aria-label="Open Ask AI" onClick={() => document.getElementById('fern-ask-ai-button')?.click()}>
+    <a
+      className="landing-hero__search"
+      aria-label="Open Ask AI"
+      href="?searchType=ai"
+    >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="landing-hero__search-icon">
         <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" strokeWidth="1.5" />
         <path d="M10.5 10.5L14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
       <span className="landing-hero__search-placeholder">Ask AI or search…</span>
       <kbd className="landing-hero__search-kbd">⌘ K</kbd>
-    </button>
+    </a>
 
     <div className="landing-hero__badges">
       <div className="landing-hero__badge-row">
