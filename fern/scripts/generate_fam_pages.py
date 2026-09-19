@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Generate browsable Family Code MDX pages from the FAM corpus.
 
-Reads docs/assets/corpus/law/FAM.jsonl(.gz), groups sections by Division and
-Part (splitting oversized parts by Chapter/Article), writes one MDX page per
-group under docs/pages/codes/fam/, rewrites docs/pages/codes/fam.mdx as the
+Reads docs/assets/corpus/law/FAM.jsonl(.gz), groups sections by Division,
+writes one MDX page per Division under docs/pages/codes/fam/, rewrites docs/pages/codes/fam.mdx as the
 overview, and prints the docs.yml navigation block to stdout.
 """
 import gzip
@@ -17,7 +16,6 @@ ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "docs/assets/corpus/law/FAM.jsonl.gz"
 OUT_DIR = ROOT / "docs/pages/codes/fam"
 OVERVIEW = ROOT / "docs/pages/codes/fam.mdx"
-MAX_CHARS = 150_000
 
 ESCAPE_RE = re.compile(r"([\\`*_{}\[\]<>|~$#])")
 
@@ -54,30 +52,10 @@ def main():
     sections = [r for r in load() if r["kind"] == "section"]
     sections.sort(key=lambda r: r["ordinal"])
 
-    # Group by (division, part).
+    # One page per Division.
     groups = OrderedDict()
     for s in sections:
-        groups.setdefault((s["division"], s["part"]), []).append(s)
-
-    # Split oversized groups by chapter, then article.
-    pages = []  # (division, part, chapter, article, sections)
-    for (div, part), secs in groups.items():
-        total = sum(s["char_count"] for s in secs)
-        if total <= MAX_CHARS:
-            pages.append((div, part, None, None, secs))
-            continue
-        by_ch = OrderedDict()
-        for s in secs:
-            by_ch.setdefault(s["chapter"], []).append(s)
-        for ch, chsecs in by_ch.items():
-            if sum(s["char_count"] for s in chsecs) <= MAX_CHARS or ch is None:
-                pages.append((div, part, ch, None, chsecs))
-                continue
-            by_art = OrderedDict()
-            for s in chsecs:
-                by_art.setdefault(s["article"], []).append(s)
-            for art, artsecs in by_art.items():
-                pages.append((div, part, ch, art, artsecs))
+        groups.setdefault(s["division"], []).append(s)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     for old in OUT_DIR.glob("*.mdx"):
@@ -85,38 +63,15 @@ def main():
 
     nav_by_div = OrderedDict()
     overview_by_div = OrderedDict()
+    pages = []
 
-    for div, part, ch, art, secs in pages:
+    for div, secs in groups.items():
         dnum, dtitle = split_label(div)
-        slug_parts = [f"division-{slug_num(dnum)}"]
-        title_bits = [f"Division {dnum}"]
-        heading_bits = [f"Division {dnum}. {dtitle}"]
-        if part:
-            pnum, ptitle = split_label(part)
-            slug_parts.append(f"part-{slug_num(pnum)}")
-            title_bits.append(f"Part {pnum}")
-            heading_bits.append(f"Part {pnum}. {ptitle}")
-            nav_label = f"Part {pnum}. {ptitle}"
-        else:
-            nav_label = dtitle
-        if ch:
-            cnum, ctitle = split_label(ch)
-            slug_parts.append(f"chapter-{slug_num(cnum)}")
-            title_bits.append(f"Chapter {cnum}")
-            heading_bits.append(f"Chapter {cnum}. {ctitle}")
-            nav_label = (f"{nav_label} — " if part else "") + f"Chapter {cnum}. {ctitle}"
-        if art:
-            anum, atitle = split_label(art)
-            slug_parts.append(f"article-{slug_num(anum)}")
-            title_bits.append(f"Article {anum}")
-            heading_bits.append(f"Article {anum}. {atitle}")
-            nav_label = f"{nav_label}, Article {anum}. {atitle}"
-
-        fname = "-".join(slug_parts) + ".mdx"
-        slug = "codes/fam/" + "-".join(slug_parts)
+        fname = f"division-{slug_num(dnum)}.mdx"
+        slug = f"codes/fam/division-{slug_num(dnum)}"
         first, last = secs[0]["section"], secs[-1]["section"]
-        page_title = f"Family Code {', '.join(title_bits)}"
-        description = f"{heading_bits[-1]} — Family Code sections {first} to {last} ({len(secs)} sections)."
+        page_title = f"Division {dnum}. {dtitle}"
+        description = f"California Family Code Division {dnum} ({dtitle}) — sections {first} to {last}, {len(secs)} sections with full text."
 
         lines = [
             "---",
@@ -125,27 +80,30 @@ def main():
             f"slug: {slug}",
             "---",
             "",
-            "**" + esc(" › ".join(heading_bits)) + "**",
-            "",
-            f"Family Code §§ {esc(first)}–{esc(last)} · {len(secs)} sections · [Family Code overview](/codes/fam)",
+            f"California Family Code · Division {esc(dnum)} · §§ {esc(first)}–{esc(last)} · {len(secs)} sections · [Family Code overview](/codes/fam)",
             "",
         ]
 
-        cur_ch = cur_art = object()
+        cur = {"part": object(), "chapter": object(), "article": object()}
+        parts_seen = []
         for s in secs:
-            if not ch and s["chapter"] != cur_ch:
-                cur_ch = s["chapter"]
-                cur_art = object()
-                if cur_ch:
-                    n, t = split_label(cur_ch)
-                    lines += [f"## Chapter {esc(n)}. {esc(t)}", ""]
-            if not art and s["article"] != cur_art:
-                cur_art = s["article"]
-                if cur_art:
-                    n, t = split_label(cur_art)
-                    lines += [f"### Article {esc(n)}. {esc(t)}", ""]
-            heading_level = "####" if (s["chapter"] and not ch) else "##"
-            head = f"{heading_level} § {esc(s['section'])}"
+            if s["part"] != cur["part"]:
+                cur["part"] = s["part"]; cur["chapter"] = object(); cur["article"] = object()
+                if cur["part"]:
+                    n, t = split_label(cur["part"])
+                    lines += [f"## Part {esc(n)}. {esc(t)}", ""]
+                    parts_seen.append(f"Part {n}. {t}")
+            if s["chapter"] != cur["chapter"]:
+                cur["chapter"] = s["chapter"]; cur["article"] = object()
+                if cur["chapter"]:
+                    n, t = split_label(cur["chapter"])
+                    lines += [f"**Chapter {esc(n)}. {esc(t)}**", ""]
+            if s["article"] != cur["article"]:
+                cur["article"] = s["article"]
+                if cur["article"]:
+                    n, t = split_label(cur["article"])
+                    lines += [f"*Article {esc(n)}. {esc(t)}*", ""]
+            head = f"### § {esc(s['section'])}"
             if s.get("repealed"):
                 head += " (Repealed)"
             lines += [head, ""]
@@ -158,32 +116,33 @@ def main():
                 lines += [f"*{esc(s['history'].strip())}*", ""]
 
         (OUT_DIR / fname).write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
-
-        nav_by_div.setdefault((dnum, dtitle), []).append((nav_label, f"docs/pages/codes/fam/{fname}"))
-        overview_by_div.setdefault((dnum, dtitle), []).append((nav_label, f"/{slug}", first, last, len(secs)))
+        pages.append(fname)
+        nav_by_div[(dnum, dtitle)] = f"docs/pages/codes/fam/{fname}"
+        overview_by_div[(dnum, dtitle)] = (f"/{slug}", first, last, len(secs), parts_seen)
 
     # Overview page.
     ov = [
         "---",
         "title: Family Code",
-        f"description: Browse all {len(sections):,} sections of the California Family Code by Division and Part.",
+        f"description: Browse all {len(sections):,} sections of the California Family Code by Division.",
         "slug: codes/fam",
         "---",
         "",
-        f"**{len(sections):,} sections** · **{len(pages)} browsable pages** · **Snapshot updated by the source: November 27, 2025**",
+        f"**{len(sections):,} sections** · **{len(pages)} Division pages** · **Snapshot updated by the source: November 27, 2025**",
         "",
-        "The California Family Code is organized into Divisions and Parts. Each page below renders the full statutory text, section by section, with the legislative history for each section.",
+        "The California Family Code is organized into Divisions, each of which is rendered on a single page below with the full statutory text, section by section, grouped by Part, Chapter, and Article, with the legislative history for each section.",
         "",
         "<Note>",
         "The text is a dated research snapshot. Verify the current text, effective date, and applicability against the [official California Legislative Information](https://leginfo.legislature.ca.gov/faces/codes.xhtml) source before relying on a provision.",
         "</Note>",
         "",
     ]
-    for (dnum, dtitle), entries in overview_by_div.items():
-        ov += [f"## Division {esc(dnum)}. {esc(dtitle)}", ""]
-        for label, href, first, last, n in entries:
-            ov.append(f"- [{esc(label)}]({href}) — §§ {esc(first)}–{esc(last)} ({n} sections)")
-        ov.append("")
+    ov += ["## Divisions", ""]
+    for (dnum, dtitle), (href, first, last, n, parts_seen) in overview_by_div.items():
+        ov.append(f"- [Division {esc(dnum)}. {esc(dtitle)}]({href}) — §§ {esc(first)}–{esc(last)} ({n} sections)")
+        for pt in parts_seen:
+            ov.append(f"  - {esc(pt)}")
+    ov.append("")
     ov += [
         "## Data",
         "",
@@ -196,13 +155,9 @@ def main():
     # docs.yml block.
     ind = "          "
     out = [f"{ind}- section: Family Code", f"{ind}  path: docs/pages/codes/fam.mdx", f"{ind}  contents:"]
-    for (dnum, dtitle), entries in nav_by_div.items():
-        div_label = json.dumps(f"Division {dnum}. {dtitle}", ensure_ascii=False)
-        out.append(f"{ind}    - section: {div_label}")
-        out.append(f"{ind}      contents:")
-        for label, path in entries:
-            out.append(f"{ind}        - page: {json.dumps(label, ensure_ascii=False)}")
-            out.append(f"{ind}          path: {path}")
+    for (dnum, dtitle), path in nav_by_div.items():
+        out.append(f"{ind}    - page: {json.dumps(f'Division {dnum}. {dtitle}', ensure_ascii=False)}")
+        out.append(f"{ind}      path: {path}")
     print("\n".join(out))
     print(f"# {len(pages)} pages written", file=sys.stderr)
 
