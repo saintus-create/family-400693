@@ -83,8 +83,20 @@ navigation:
                 path: docs/pages/codes/fam/division-7.mdx
               - page: "Division 8. Custody of Children"
                 path: docs/pages/codes/fam/division-8.mdx
-              - page: "Division 9. Support"
-                path: docs/pages/codes/fam/division-9.mdx
+              - section: "Division 9. Support"
+                contents:
+                  - page: "Part 1. Definitions and General Provisions"
+                    path: docs/pages/codes/fam/division-9-part-1.mdx
+                  - page: "Part 2. Child Support"
+                    path: docs/pages/codes/fam/division-9-part-2.mdx
+                  - page: "Part 3. Spousal Support"
+                    path: docs/pages/codes/fam/division-9-part-3.mdx
+                  - page: "Part 4. Support of Parents"
+                    path: docs/pages/codes/fam/division-9-part-4.mdx
+                  - page: "Part 5. Enforcement of Support Orders"
+                    path: docs/pages/codes/fam/division-9-part-5.mdx
+                  - page: "Part 6. Uniform Interstate Family Support Act"
+                    path: docs/pages/codes/fam/division-9-part-6.mdx
               - page: "Division 10. Prevention of Domestic Violence"
                 path: docs/pages/codes/fam/division-10.mdx
               - page: "Division 11. Minors"
@@ -95,8 +107,14 @@ navigation:
                 path: docs/pages/codes/fam/division-13.mdx
               - page: "Division 14. Family Law Facilitator Act"
                 path: docs/pages/codes/fam/division-14.mdx
-              - page: "Division 17. Support Services"
-                path: docs/pages/codes/fam/division-17.mdx
+              - section: "Division 17. Support Services"
+                contents:
+                  - page: "Chapter 1. Department of Child Support Services"
+                    path: docs/pages/codes/fam/division-17-chapter-1.mdx
+                  - page: "Chapter 2. Child Support Enforcement"
+                    path: docs/pages/codes/fam/division-17-chapter-2.mdx
+                  - page: "Chapter 5. Complaint Resolution"
+                    path: docs/pages/codes/fam/division-17-chapter-5.mdx
               - page: "Division 20. Pilot Projects"
                 path: docs/pages/codes/fam/division-20.mdx
           - page: Financial Code
