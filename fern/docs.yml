@@ -39,6 +39,9 @@ navigation:
           - page: California Codes
             path: docs/pages/codes/index.mdx
             icon: fa-duotone fa-books
+          - page: Search the California Code Corpus
+            path: docs/pages/codes/search.mdx
+            icon: fa-duotone fa-magnifying-glass
       - section: California Codes
         contents:
           - page: California Constitution
@@ -103,6 +106,9 @@ navigation:
             path: docs/pages/codes/wic.mdx
       - section: Research
         contents:
+          - page: AI Research Behavior
+            path: docs/pages/ai-research.mdx
+            icon: fa-duotone fa-wand-magic-sparkles
           - page: Court Rules
             path: docs/pages/court-rules-overview.mdx
             icon: fa-duotone fa-scale-balanced
