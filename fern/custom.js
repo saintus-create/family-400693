@@ -463,3 +463,131 @@ function isDarkMode() {
   // Also watch prefers-color-scheme media query
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
 })();
+
+
+// ─── California corpus search ─────────────────────────────────────
+// Search is deliberately just-in-time: fetch and scan only the selected code
+// asset, rather than putting 186k records into the page or an AI context.
+(function () {
+  var root = document.querySelector('[data-corpus-search]');
+  if (!root) return;
+  var select = root.querySelector('[data-corpus-code]');
+  var form = root.querySelector('[data-corpus-form]');
+  var input = root.querySelector('[data-corpus-query]');
+  var status = root.querySelector('[data-corpus-status]');
+  var results = root.querySelector('[data-corpus-results]');
+  var manifest;
+  var names = {};
+
+  function esc(value) { return String(value || '').toLowerCase(); }
+  function terms(value) {
+    return (esc(value).match(/[a-z0-9][a-z0-9._-]{1,}/g) || []).filter(function (x) {
+      return !/^(the|and|for|that|this|with|from|what|how|does|code|section|california)$/.test(x);
+    });
+  }
+  function score(rec, query, words) {
+    var hay = [rec.citation, rec.section, rec.text, rec.path, rec.division, rec.part, rec.title].map(esc).join(' ');
+    var value = 0;
+    var exact = esc(query);
+    if (exact && hay.indexOf(exact) !== -1) value += 24;
+    if (rec.citation && esc(rec.citation).indexOf(exact) !== -1) value += 100;
+    words.forEach(function (word) {
+      var hits = hay.split(word).length - 1;
+      if (hits) value += Math.min(18, hits * 3) + (esc(rec.citation).indexOf(word) !== -1 ? 20 : 0);
+    });
+    if (rec.path && words.some(function (word) { return esc(rec.path).indexOf(word) !== -1; })) value += 6;
+    if (rec.history && /history|amend|effective|repeal/.test(esc(query))) value += 5;
+    return value;
+  }
+  function codePage(code) { return '/codes/' + String(code).toLowerCase(); }
+  function render(items, query) {
+    results.textContent = '';
+    if (!items.length) {
+      status.textContent = 'No matching sections found. Try a citation, a shorter phrase, or another code.';
+      return;
+    }
+    status.textContent = 'Showing ' + items.length + ' strongest matches for “' + query + '”.';
+    items.forEach(function (item) {
+      var rec = item.rec;
+      var li = document.createElement('li');
+      var h = document.createElement('h3');
+      var a = document.createElement('a');
+      a.href = codePage(rec.code);
+      a.textContent = rec.citation || (rec.code + ' § ' + rec.section);
+      h.appendChild(a);
+      li.appendChild(h);
+      var meta = document.createElement('p');
+      meta.className = 'corpus-search__meta';
+      meta.textContent = [names[rec.code] || rec.code, rec.path].filter(Boolean).join(' · ');
+      li.appendChild(meta);
+      var text = document.createElement('p');
+      text.textContent = String(rec.text || '').slice(0, 720) + (String(rec.text || '').length > 720 ? '…' : '');
+      li.appendChild(text);
+      if (rec.history) {
+        var hist = document.createElement('small');
+        hist.textContent = rec.history;
+        li.appendChild(hist);
+      }
+      results.appendChild(li);
+    });
+  }
+  async function scan(code, query, limit) {
+    var url = '/assets/corpus/law/' + code + '.jsonl.gz';
+    var response = await fetch(url);
+    if (!response.ok || !response.body || !window.DecompressionStream) throw new Error('Corpus asset unavailable');
+    var stream = response.body.pipeThrough(new DecompressionStream('gzip')).getReader();
+    var decoder = new TextDecoder();
+    var buffer = '';
+    var words = terms(query);
+    var best = [];
+    function add(line) {
+      if (!line.trim()) return;
+      var rec;
+      try { rec = JSON.parse(line); } catch (_) { return; }
+      if (rec.kind !== 'section') return;
+      var value = score(rec, query, words);
+      if (value <= 0) return;
+      best.push({ rec: rec, value: value });
+      best.sort(function (a, b) { return b.value - a.value; });
+      if (best.length > limit) best.pop();
+    }
+    while (true) {
+      var chunk = await stream.read();
+      buffer += decoder.decode(chunk.value || new Uint8Array(), { stream: !chunk.done });
+      var lines = buffer.split('\n');
+      buffer = lines.pop() || '';
+      lines.forEach(add);
+      if (chunk.done) break;
+    }
+    add(buffer);
+    return best;
+  }
+  async function run(query) {
+    var codes = select.value ? [select.value] : manifest.datasets.map(function (x) { return x.abbr; });
+    var all = [];
+    status.textContent = 'Searching ' + codes.length + ' code dataset' + (codes.length === 1 ? '' : 's') + '…';
+    results.textContent = '';
+    for (var i = 0; i < codes.length; i++) {
+      var found = await scan(codes[i], query, 12);
+      all = all.concat(found).sort(function (a, b) { return b.value - a.value; }).slice(0, 20);
+    }
+    render(all, query);
+  }
+  fetch('/assets/corpus/manifest.json').then(function (r) { return r.json(); }).then(function (data) {
+    manifest = data;
+    data.datasets.forEach(function (item) {
+      names[item.abbr] = item.name;
+      var option = document.createElement('option');
+      option.value = item.abbr;
+      option.textContent = item.abbr + ' — ' + item.name;
+      select.appendChild(option);
+    });
+    status.textContent = data.datasets.length + ' code datasets ready; search by citation or text.';
+  }).catch(function () { status.textContent = 'The corpus catalog could not be loaded.'; });
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var query = input.value.trim();
+    if (query.length < 2 || !manifest) return;
+    run(query).catch(function () { status.textContent = 'Search could not read the compressed corpus asset in this browser.'; });
+  });
+})();
