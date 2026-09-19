@@ -1,0 +1,36 @@
+---
+title: Harbors and Navigation Code
+description: Section-level Harbors and Navigation Code corpus with 1,333 sections.
+slug: codes/hnc
+---
+
+# Harbors and Navigation Code
+
+**1,333 sections** · **1,528 records including hierarchy nodes** · **Snapshot updated by the source: November 27, 2025**
+
+This page is the Fern catalog entry for the `HNC` dataset. The complete section-level snapshot is preserved as compressed JSON Lines so it can be downloaded, mirrored, or indexed by a downstream search service without generating one fragile documentation page per section.
+
+## Files
+
+- [Download the `HNC.jsonl.gz` dataset](/assets/corpus/law/HNC.jsonl.gz)
+- [Download the corpus manifest](/assets/corpus/manifest.json)
+- [Browse the official California code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml)
+
+## Record format
+
+Each JSONL record is either a `section` or a table-of-contents node. Section records retain the citation, operative text, history, repeal status, hierarchy path, and a stable UID such as `HNC:1`.
+
+```json
+{
+  "kind": "section",
+  "code": "HNC",
+  "citation": "HNC § …",
+  "section": "…",
+  "text": "…",
+  "history": "…"
+}
+```
+
+<Note>
+The dataset is a dated research snapshot. Verify the current text, effective date, and applicability against the official California Legislative Information source before relying on a provision.
+</Note>

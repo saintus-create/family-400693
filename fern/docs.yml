@@ -36,9 +36,73 @@ navigation:
     layout:
       - section: Legal library
         contents:
+          - page: California Codes
+            path: docs/pages/codes/index.mdx
+            icon: fa-duotone fa-books
+      - section: California Codes
+        contents:
+          - page: California Constitution
+            path: docs/pages/codes/cons.mdx
+          - page: Business and Professions Code
+            path: docs/pages/codes/bpc.mdx
+          - page: Civil Code
+            path: docs/pages/codes/civ.mdx
+          - page: Code of Civil Procedure
+            path: docs/pages/codes/ccp.mdx
+          - page: Commercial Code
+            path: docs/pages/codes/com.mdx
+          - page: Corporations Code
+            path: docs/pages/codes/corp.mdx
+          - page: Education Code
+            path: docs/pages/codes/edc.mdx
+          - page: Elections Code
+            path: docs/pages/codes/elec.mdx
+          - page: Evidence Code
+            path: docs/pages/codes/evid.mdx
           - page: Family Code
-            path: docs/pages/family-code-overview.mdx
-            icon: fa-duotone fa-people-roof
+            path: docs/pages/codes/fam.mdx
+          - page: Financial Code
+            path: docs/pages/codes/fin.mdx
+          - page: Fish and Game Code
+            path: docs/pages/codes/fgc.mdx
+          - page: Food and Agricultural Code
+            path: docs/pages/codes/fac.mdx
+          - page: Government Code
+            path: docs/pages/codes/gov.mdx
+          - page: Harbors and Navigation Code
+            path: docs/pages/codes/hnc.mdx
+          - page: Health and Safety Code
+            path: docs/pages/codes/hsc.mdx
+          - page: Insurance Code
+            path: docs/pages/codes/ins.mdx
+          - page: Labor Code
+            path: docs/pages/codes/lab.mdx
+          - page: Military and Veterans Code
+            path: docs/pages/codes/mvc.mdx
+          - page: Penal Code
+            path: docs/pages/codes/pen.mdx
+          - page: Probate Code
+            path: docs/pages/codes/prob.mdx
+          - page: Public Contract Code
+            path: docs/pages/codes/pcc.mdx
+          - page: Public Resources Code
+            path: docs/pages/codes/prc.mdx
+          - page: Public Utilities Code
+            path: docs/pages/codes/puc.mdx
+          - page: Revenue and Taxation Code
+            path: docs/pages/codes/rtc.mdx
+          - page: Streets and Highways Code
+            path: docs/pages/codes/shc.mdx
+          - page: Unemployment Insurance Code
+            path: docs/pages/codes/uic.mdx
+          - page: Vehicle Code
+            path: docs/pages/codes/veh.mdx
+          - page: Water Code
+            path: docs/pages/codes/wat.mdx
+          - page: Welfare and Institutions Code
+            path: docs/pages/codes/wic.mdx
+      - section: Research
+        contents:
           - page: Court Rules
             path: docs/pages/court-rules-overview.mdx
             icon: fa-duotone fa-scale-balanced
@@ -51,8 +115,6 @@ navigation:
           - page: Invitations to Comment
             path: docs/pages/invitations-to-comment.mdx
             icon: fa-duotone fa-comments
-      - section: Research
-        contents:
           - page: Public Records
             path: docs/pages/library/public-records/public-records.mdx
             icon: fa-duotone fa-folder-open

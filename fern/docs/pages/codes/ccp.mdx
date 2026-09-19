@@ -1,0 +1,36 @@
+---
+title: Code of Civil Procedure
+description: Section-level Code of Civil Procedure corpus with 3,410 sections.
+slug: codes/ccp
+---
+
+# Code of Civil Procedure
+
+**3,410 sections** · **4,040 records including hierarchy nodes** · **Snapshot updated by the source: July 10, 2026**
+
+This page is the Fern catalog entry for the `CCP` dataset. The complete section-level snapshot is preserved as compressed JSON Lines so it can be downloaded, mirrored, or indexed by a downstream search service without generating one fragile documentation page per section.
+
+## Files
+
+- [Download the `CCP.jsonl.gz` dataset](/assets/corpus/law/CCP.jsonl.gz)
+- [Download the corpus manifest](/assets/corpus/manifest.json)
+- [Browse the official California code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml)
+
+## Record format
+
+Each JSONL record is either a `section` or a table-of-contents node. Section records retain the citation, operative text, history, repeal status, hierarchy path, and a stable UID such as `CCP:1`.
+
+```json
+{
+  "kind": "section",
+  "code": "CCP",
+  "citation": "CCP § …",
+  "section": "…",
+  "text": "…",
+  "history": "…"
+}
+```
+
+<Note>
+The dataset is a dated research snapshot. Verify the current text, effective date, and applicability against the official California Legislative Information source before relying on a provision.
+</Note>
