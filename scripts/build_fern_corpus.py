@@ -3,7 +3,10 @@
 
 The corpus stays section-level and compressed. Fern receives a browsable catalog,
 per-code overview pages, a machine-readable manifest, and downloadable JSONL
-snapshots instead of 162k individual MDX pages.
+snapshots. The same snapshot can be rendered as per-section Fern MDX via
+scripts/generate_fern_sections_mdx.py (~162k pages), which is additive and
+kept alongside the compressed assets — the catalog remains lightweight while
+the optional folder `fern/docs/pages/codes/sections/` holds the full MDX.
 """
 from __future__ import annotations
 
@@ -27,23 +30,38 @@ def page_for(code: dict) -> str:
     records = f"{code['records']:,}"
     updated = code.get("updated_by_state") or "not stated"
     filename = code["file"]
+    code_slug = slug(abbr)
     return f'''---
 title: {name}
 description: Section-level {name} corpus with {sections} sections.
-slug: codes/{slug(abbr)}
+slug: codes/{code_slug}
 ---
 
 # {name}
 
 **{sections} sections** · **{records} records including hierarchy nodes** · **Snapshot updated by the source: {updated}**
 
-This page is the Fern catalog entry for the `{abbr}` dataset. The complete section-level snapshot is preserved as compressed JSON Lines so it can be downloaded, mirrored, or indexed by a downstream search service without generating one fragile documentation page per section.
+This page is the Fern catalog entry for the `{abbr}` dataset. The complete section-level snapshot is preserved as compressed JSON Lines so it can be downloaded, mirrored, or indexed by a downstream search service. The same data is also rendered as **per-section MDX pages** under `Code Sections (MDX)` — one Fern MDX page per section (e.g. `/codes/{code_slug}/1`), generated from the canonical corpus.
 
 ## Files
 
 - [Download the `{filename}` dataset]({REPO_ASSET_URL}/law/{filename})
 - [Download the corpus manifest]({REPO_ASSET_URL}/manifest.json)
 - [Browse the official California code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml)
+- [Browse {name} MDX sections](/codes/sections) — navigate `sections/{code_slug}/` in the sidebar
+
+## MDX generation
+
+Regenerate the catalog and/or the per-section MDX from the canonical `data/law/*.jsonl.gz` snapshot:
+
+```bash
+# catalog (overview pages + compressed assets)
+python3 scripts/build_fern_corpus.py /path/to/source/checkout
+
+# per-section MDX (one .mdx per statutory section)
+python3 scripts/generate_fern_sections_mdx.py --code {abbr}   # single code
+python3 scripts/generate_fern_sections_mdx.py                 # all 30 codes (~162k files)
+```
 
 ## Record format
 
@@ -89,8 +107,9 @@ def main() -> None:
     for old in law_asset_root.glob("*.jsonl.gz"):
         old.unlink()
     for old in page_root.glob("*.mdx"):
-        if old.name != "index.mdx":
-            old.unlink()
+        if old.name in {"index.mdx", "search.mdx"}:
+            continue
+        old.unlink()
 
     catalog = {
         "format": "fern-corpus-index-v1",

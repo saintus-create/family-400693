@@ -1,0 +1,87 @@
+---
+title: "California Code Sections (MDX)"
+description: "Per-section MDX for 162k California statutory and constitutional sections"
+slug: codes/sections
+---
+
+# California Code Sections — Per-section MDX
+
+This directory contains **162,324 sections** across **30 codes** as individual Fern MDX pages under `fern/docs/pages/codes/sections/`.
+
+Each section is a first-class Fern page with:
+
+- Frontmatter (`title`, `description`, `slug`, `position`) for SEO and ordering
+
+- Canonical citation and hierarchy
+
+- Operative text and history
+
+- Stable `UID` (e.g. `FAM:1`, `CONS:I-1`, `GOV:985#2`) and official LegInfo link
+
+- Previous / next navigation in statutory order
+
+<Note>
+Dated research snapshot — always verify against the [official California Legislative Information](https://leginfo.legislature.ca.gov/faces/codes.xhtml) source. Run `python3 scripts/generate_fern_sections_mdx.py` to (re)generate the full tree.
+</Note>
+
+## Demo in this branch
+
+This branch commits **FAM (1,636) + CONS (372) = 2,008 MDX** as a fast preview demo. CI regenerates the full 162k before every `fern check` / `fern generate` via `.github/workflows/*.yml` (`python3 scripts/generate_fern_sections_mdx.py --clean`). To commit every section locally:
+
+```bash
+python3 scripts/generate_fern_sections_mdx.py --clean
+```
+
+## How to use
+
+- **Browse:** expand **Code Sections (MDX)** in the left sidebar, pick a code, then a section. Pages are ordered by `position` (statutory order).
+
+- **Search:** use **Search the California Code Corpus** for full-text ranking, then click a citation link which resolves to its MDX page.
+
+- **AI search:** Fern Ask Fern can retrieve and cite these pages; they are also synced via `scripts/sync_fern_legal_corpus.py` to the Documents API.
+
+- **Build locally:** `python3 scripts/generate_fern_sections_mdx.py --code FAM --limit 5` then `fern check`.
+
+## Regenerate
+
+```bash
+python3 scripts/generate_fern_sections_mdx.py          # all 162k sections
+python3 scripts/generate_fern_sections_mdx.py --code FAM # just Family Code
+python3 scripts/generate_fern_sections_mdx.py --clean     # clean first
+```
+
+## Code catalog
+
+| Code | Sections | Folder | Snapshot |
+
+| --- | ---: | --- | --- |
+| Business and Professions Code (`BPC`) | 10,521 | `sections/bpc/` | July 21, 2026 |
+| Code of Civil Procedure (`CCP`) | 3,410 | `sections/ccp/` | July 10, 2026 |
+| Civil Code (`CIV`) | 4,040 | `sections/civ/` | August 26, 2026 |
+| Commercial Code (`COM`) | 669 | `sections/com/` | November 27, 2025 |
+| California Constitution (`CONS`) | 372 | `sections/cons/` | December 17, 2025 |
+| Corporations Code (`CORP`) | 2,433 | `sections/corp/` | November 27, 2025 |
+| Education Code (`EDC`) | 11,569 | `sections/edc/` | July 18, 2026 |
+| Elections Code (`ELEC`) | 2,376 | `sections/elec/` | May 29, 2026 |
+| Evidence Code (`EVID`) | 506 | `sections/evid/` | November 27, 2025 |
+| Food and Agricultural Code (`FAC`) | 9,663 | `sections/fac/` | July 17, 2026 |
+| Family Code (`FAM`) | 1,636 | `sections/fam/` | November 27, 2025 |
+| Fish and Game Code (`FGC`) | 2,297 | `sections/fgc/` | November 27, 2025 |
+| Financial Code (`FIN`) | 3,320 | `sections/fin/` | July 10, 2026 |
+| Government Code (`GOV`) | 21,863 | `sections/gov/` | September 02, 2026 |
+| Harbors and Navigation Code (`HNC`) | 1,333 | `sections/hnc/` | November 27, 2025 |
+| Health and Safety Code (`HSC`) | 17,730 | `sections/hsc/` | July 17, 2026 |
+| Insurance Code (`INS`) | 4,516 | `sections/ins/` | July 10, 2026 |
+| Labor Code (`LAB`) | 2,641 | `sections/lab/` | July 21, 2026 |
+| Military and Veterans Code (`MVC`) | 1,246 | `sections/mvc/` | July 10, 2026 |
+| Public Contract Code (`PCC`) | 1,667 | `sections/pcc/` | July 17, 2026 |
+| Penal Code (`PEN`) | 5,754 | `sections/pen/` | July 21, 2026 |
+| Public Resources Code (`PRC`) | 8,188 | `sections/prc/` | August 29, 2026 |
+| Probate Code (`PROB`) | 2,711 | `sections/prob/` | November 27, 2025 |
+| Public Utilities Code (`PUC`) | 7,567 | `sections/puc/` | August 08, 2026 |
+| Revenue and Taxation Code (`RTC`) | 7,366 | `sections/rtc/` | August 19, 2026 |
+| Streets and Highways Code (`SHC`) | 4,631 | `sections/shc/` | July 17, 2026 |
+| Unemployment Insurance Code (`UIC`) | 1,120 | `sections/uic/` | July 17, 2026 |
+| Vehicle Code (`VEH`) | 3,824 | `sections/veh/` | July 17, 2026 |
+| Water Code (`WAT`) | 10,131 | `sections/wat/` | July 17, 2026 |
+| Welfare and Institutions Code (`WIC`) | 7,224 | `sections/wic/` | July 21, 2026 |

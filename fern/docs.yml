@@ -104,6 +104,16 @@ navigation:
             path: docs/pages/codes/wat.mdx
           - page: Welfare and Institutions Code
             path: docs/pages/codes/wic.mdx
+      - section: Code Sections (MDX)
+        icon: fa-duotone fa-file-lines
+        collapsed: true
+        contents:
+          - page: MDX transfer guide
+            path: docs/pages/codes/mdx-transfer-guide.mdx
+          - folder: docs/pages/codes/sections
+            title: Code Sections
+            slug: codes/sections
+            title-source: frontmatter
       - section: Research
         contents:
           - page: AI Research Behavior

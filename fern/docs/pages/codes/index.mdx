@@ -10,7 +10,12 @@ This catalog packages the complete section-level snapshot from the law corpus re
 
 ## How the index works
 
-Fern serves a standard overview page for each code and keeps the full section records as compressed JSON Lines assets. This avoids creating more than 162,000 individual MDX pages while preserving every section, history field, hierarchy path, and checksum for downstream indexing.
+Fern serves a standard overview page for each code and keeps the full section records as compressed JSON Lines assets for bulk download and AI indexing. The same snapshot is also available as **per-section Fern MDX** under **Code Sections (MDX)** — one MDX file per statutory section (162,324 sections total), generated from the canonical corpus via `scripts/generate_fern_sections_mdx.py`.
+
+- **Catalog pages** (below) are lightweight overviews for each code.
+- **Per-section MDX** lives at `fern/docs/pages/codes/sections/<code>/*.mdx` and renders at `/codes/<code>/<section>` (e.g. `/codes/fam/1`, `/codes/cons/I-1`, `/codes/gov/65913.4`). Each page has frontmatter `title` = citation, `slug` = `codes/<code>/<slug>`, and `position` = statutory order, plus text, history, hierarchy, and official LegInfo link.
+- **Navigation:** `fern/docs.yml` uses a single `folder: docs/pages/codes/sections` (title-source: frontmatter) so Fern auto-discovers every MDX file without listing 162k pages manually.
+- **Rebuild:** `python3 scripts/generate_fern_sections_mdx.py` (all codes) or `python3 scripts/generate_fern_sections_mdx.py --code FAM` (single code). CI can run this before `fern generate` so the repo stays small while the deployed site still has every section as MDX.
 
 <Note>
 This is a dated research snapshot. Verify current text, effective dates, and applicability against the [official California Legislative Information code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml).

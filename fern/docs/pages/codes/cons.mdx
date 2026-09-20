@@ -8,13 +8,27 @@ slug: codes/cons
 
 **372 sections** · **404 records including hierarchy nodes** · **Snapshot updated by the source: December 17, 2025**
 
-This page is the Fern catalog entry for the `CONS` dataset. The complete section-level snapshot is preserved as compressed JSON Lines so it can be downloaded, mirrored, or indexed by a downstream search service without generating one fragile documentation page per section.
+This page is the Fern catalog entry for the `CONS` dataset. The complete section-level snapshot is preserved as compressed JSON Lines so it can be downloaded, mirrored, or indexed by a downstream search service. The same data is also rendered as **per-section MDX pages** under `Code Sections (MDX)` — one Fern MDX page per section (e.g. `/codes/cons/1`), generated from the canonical corpus.
 
 ## Files
 
 - [Download the `CONS.jsonl.gz` dataset](https://github.com/saintus-create/family-400693/blob/main/fern/docs/assets/corpus/law/CONS.jsonl.gz)
 - [Download the corpus manifest](https://github.com/saintus-create/family-400693/blob/main/fern/docs/assets/corpus/manifest.json)
 - [Browse the official California code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml)
+- [Browse California Constitution MDX sections](/codes/sections) — navigate `sections/cons/` in the sidebar
+
+## MDX generation
+
+Regenerate the catalog and/or the per-section MDX from the canonical `data/law/*.jsonl.gz` snapshot:
+
+```bash
+# catalog (overview pages + compressed assets)
+python3 scripts/build_fern_corpus.py /path/to/source/checkout
+
+# per-section MDX (one .mdx per statutory section)
+python3 scripts/generate_fern_sections_mdx.py --code CONS   # single code
+python3 scripts/generate_fern_sections_mdx.py                 # all 30 codes (~162k files)
+```
 
 ## Record format
 
