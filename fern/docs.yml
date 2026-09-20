@@ -111,8 +111,16 @@ navigation:
                 contents:
                   - page: "Chapter 1. Department of Child Support Services"
                     path: docs/pages/codes/fam/division-17-chapter-1.mdx
-                  - page: "Chapter 2. Child Support Enforcement"
-                    path: docs/pages/codes/fam/division-17-chapter-2.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 1. Support Obligations"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-1.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 1.5. Delinquent Child Support Obligations and Financial Institution Data Match"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-1-5.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 2. Collections and Enforcement"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-2.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 3. Program Compliance"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-3.mdx
+                  - page: "Chapter 2. Child Support Enforcement, Article 4. Program Costs"
+                    path: docs/pages/codes/fam/division-17-chapter-2-article-4.mdx
                   - page: "Chapter 5. Complaint Resolution"
                     path: docs/pages/codes/fam/division-17-chapter-5.mdx
               - page: "Division 20. Pilot Projects"

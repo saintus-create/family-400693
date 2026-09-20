@@ -52,9 +52,14 @@ def main():
     sections = [r for r in load() if r["kind"] == "section"]
     sections.sort(key=lambda r: r["ordinal"])
 
-    # One page per Division, except SPLIT_DIVISIONS which get one page per
-    # Part (or per Chapter when the Division has no Parts).
-    SPLIT_DIVISIONS = {"9", "17"}
+    # Size-driven splitting: Division -> Part -> Chapter -> Article -> batches
+    # of sections, until every page is under MAX_CHARS.
+    MAX_CHARS = 300_000
+    LEVELS = ["part", "chapter", "article"]
+
+    def size(secs):
+        return sum(len(s.get("text") or "") + len(s.get("history") or "") + 40 for s in secs)
+
     groups = OrderedDict()
     for s in sections:
         groups.setdefault(s["division"], []).append(s)
@@ -63,8 +68,8 @@ def main():
     for old in OUT_DIR.glob("*.mdx"):
         old.unlink()
 
-    nav_by_div = OrderedDict()      # (dnum, dtitle) -> [(label, path)] or path
-    overview_by_div = OrderedDict() # (dnum, dtitle) -> [(label, href, first, last, n)]
+    nav_by_div = OrderedDict()      # (dnum, dtitle) -> path or [(label, path)]
+    overview_by_div = OrderedDict() # (dnum, dtitle) -> [(label|None, href, first, last, n)]
     pages = []
 
     def write_page(fname, slug, page_title, description, crumb, secs, top_level):
@@ -81,27 +86,21 @@ def main():
         ]
         cur = {"part": object(), "chapter": object(), "article": object()}
         for s in secs:
-            if s["part"] != cur["part"]:
-                cur["part"] = s["part"]; cur["chapter"] = object(); cur["article"] = object()
-                if cur["part"] and "part" in top_level:
-                    n, t = split_label(cur["part"])
-                    lines += [f"## Part {esc(n)}. {esc(t)}", ""]
-            if s["chapter"] != cur["chapter"]:
-                cur["chapter"] = s["chapter"]; cur["article"] = object()
-                if cur["chapter"]:
-                    n, t = split_label(cur["chapter"])
-                    if "chapter" in top_level:
-                        lines += [f"## Chapter {esc(n)}. {esc(t)}", ""]
-                    elif "article" not in top_level:
-                        lines += [f"**Chapter {esc(n)}. {esc(t)}**", ""]
-            if s["article"] != cur["article"]:
-                cur["article"] = s["article"]
-                if cur["article"]:
-                    n, t = split_label(cur["article"])
-                    if "article" in top_level:
-                        lines += [f"## Article {esc(n)}. {esc(t)}", ""]
-                    else:
-                        lines += [f"*Article {esc(n)}. {esc(t)}*", ""]
+            for lvl, reset in (("part", ("chapter", "article")), ("chapter", ("article",)), ("article", ())):
+                if s[lvl] != cur[lvl]:
+                    cur[lvl] = s[lvl]
+                    for r in reset:
+                        cur[r] = object()
+                    if cur[lvl] and lvl in top_level:
+                        n, t = split_label(cur[lvl])
+                        name = lvl.capitalize()
+                        idx = top_level.index(lvl)
+                        if idx == 0:
+                            lines += [f"## {name} {esc(n)}. {esc(t)}", ""]
+                        elif idx == 1:
+                            lines += [f"**{name} {esc(n)}. {esc(t)}**", ""]
+                        else:
+                            lines += [f"*{name} {esc(n)}. {esc(t)}*", ""]
             head = f"### § {esc(s['section'])}"
             if s.get("repealed"):
                 head += " (Repealed)"
@@ -113,41 +112,64 @@ def main():
                     lines += [esc(para), ""]
             if s.get("history"):
                 lines += [f"*{esc(s['history'].strip())}*", ""]
-        (OUT_DIR / fname).write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        body = "\n".join(lines).rstrip() + "\n"
+        (OUT_DIR / fname).write_text(body, encoding="utf-8")
         pages.append(fname)
         return first, last
 
-    for div, secs in groups.items():
-        dnum, dtitle = split_label(div)
-        dslug = slug_num(dnum)
-        key = (dnum, dtitle)
-        if dnum not in SPLIT_DIVISIONS:
-            fname = f"division-{dslug}.mdx"
-            slug = f"codes/fam/division-{dslug}"
-            title = f"Division {dnum}. {dtitle}"
-            desc = f"California Family Code Division {dnum} ({dtitle}) — sections {secs[0]['section']} to {secs[-1]['section']}, {len(secs)} sections with full text."
-            first, last = write_page(fname, slug, title, desc, f"California Family Code · Division {esc(dnum)}", secs, {"part", "chapter"})
-            nav_by_div[key] = f"docs/pages/codes/fam/{fname}"
-            overview_by_div[key] = [(None, f"/{slug}", first, last, len(secs))]
-            continue
-
-        unit = "part" if any(s["part"] for s in secs) else "chapter"
+    def emit(secs, dnum, dtitle, crumbs, slug_parts, level_idx, results):
+        """Write secs as one page if small enough, else split at the next level."""
+        if size(secs) <= MAX_CHARS or level_idx > len(LEVELS):
+            if level_idx > len(LEVELS) and size(secs) > MAX_CHARS:
+                # Fallback: fixed batches of sections.
+                batch, n = [], 1
+                for s in secs:
+                    batch.append(s)
+                    if size(batch) > MAX_CHARS * 0.9:
+                        emit(batch, dnum, dtitle, crumbs + [f"Sections {batch[0]['section']}–{batch[-1]['section']}"],
+                             slug_parts + [f"sections-{slug_num(batch[0]['section'])}"], len(LEVELS) + 1, results)
+                        batch = []
+                if batch:
+                    emit(batch, dnum, dtitle, crumbs + [f"Sections {batch[0]['section']}–{batch[-1]['section']}"],
+                         slug_parts + [f"sections-{slug_num(batch[0]['section'])}"], len(LEVELS) + 1, results)
+                return
+            fname = "-".join(slug_parts) + ".mdx"
+            slug = "codes/fam/" + "-".join(slug_parts)
+            title = f"Division {dnum}. {dtitle}" if len(crumbs) == 1 else f"Division {dnum}, " + ", ".join(crumbs[1:])
+            desc = f"California Family Code {' › '.join(crumbs)} — sections {secs[0]['section']} to {secs[-1]['section']}, {len(secs)} sections with full text."
+            crumb = "California Family Code · " + " › ".join(esc(c) for c in crumbs)
+            remaining = LEVELS[min(level_idx, len(LEVELS)):]
+            first, last = write_page(fname, slug, title, desc, crumb, secs, remaining)
+            label = None if len(crumbs) == 1 else ", ".join(crumbs[1:])
+            results.append((label, fname, f"/{slug}", first, last, len(secs)))
+            return
+        lvl = LEVELS[level_idx]
+        if not any(s[lvl] for s in secs):
+            emit(secs, dnum, dtitle, crumbs, slug_parts, level_idx + 1, results)
+            return
         sub = OrderedDict()
         for s in secs:
-            sub.setdefault(s[unit], []).append(s)
-        nav_by_div[key] = []
-        overview_by_div[key] = []
+            sub.setdefault(s[lvl], []).append(s)
         for label, ssecs in sub.items():
-            unum, utitle = split_label(label)
-            uname = unit.capitalize()
-            fname = f"division-{dslug}-{unit}-{slug_num(unum)}.mdx"
-            slug = f"codes/fam/division-{dslug}-{unit}-{slug_num(unum)}"
-            title = f"Division {dnum}, {uname} {unum}. {utitle}"
-            desc = f"California Family Code Division {dnum} ({dtitle}), {uname} {unum} ({utitle}) — sections {ssecs[0]['section']} to {ssecs[-1]['section']}, {len(ssecs)} sections with full text."
-            crumb = f"California Family Code · Division {esc(dnum)}. {esc(dtitle)} › {uname} {esc(unum)}. {esc(utitle)}"
-            first, last = write_page(fname, slug, title, desc, crumb, ssecs, {"chapter"} if unit == "part" else {"article"})
-            nav_by_div[key].append((f"{uname} {unum}. {utitle}", f"docs/pages/codes/fam/{fname}"))
-            overview_by_div[key].append((f"{uname} {unum}. {utitle}", f"/{slug}", first, last, len(ssecs)))
+            if label is None:
+                emit(ssecs, dnum, dtitle, crumbs, slug_parts, level_idx + 1, results)
+                continue
+            n, t = split_label(label)
+            emit(ssecs, dnum, dtitle, crumbs + [f"{lvl.capitalize()} {n}. {t}"],
+                 slug_parts + [lvl, slug_num(n)], level_idx + 1, results)
+
+    for div, secs in groups.items():
+        dnum, dtitle = split_label(div)
+        key = (dnum, dtitle)
+        results = []
+        emit(secs, dnum, dtitle, [f"Division {dnum}. {dtitle}"], ["division", slug_num(dnum)], 0, results)
+        if len(results) == 1 and results[0][0] is None:
+            _, fname, href, first, last, n = results[0]
+            nav_by_div[key] = f"docs/pages/codes/fam/{fname}"
+            overview_by_div[key] = [(None, href, first, last, n)]
+        else:
+            nav_by_div[key] = [(label or f"Division {dnum}", f"docs/pages/codes/fam/{fname}") for label, fname, *_ in results]
+            overview_by_div[key] = [(label or f"Division {dnum}", href, first, last, n) for label, fname, href, first, last, n in results]
 
     # Overview page.
     ov = [
@@ -159,7 +181,7 @@ def main():
         "",
         f"**{len(sections):,} sections** · **{len(pages)} browsable pages** · **Snapshot updated by the source: November 27, 2025**",
         "",
-        "The California Family Code is organized into Divisions, rendered one page per Division below (Divisions 9 and 17 are split into one page per Part or Chapter), with the full statutory text, section by section, with the legislative history for each section.",
+        "The California Family Code is organized into Divisions, rendered one page per Division below (large Divisions are split by Part, Chapter, or Article to keep pages readable), with the full statutory text, section by section, with the legislative history for each section.",
         "",
         "<Note>",
         "The text is a dated research snapshot. Verify the current text, effective date, and applicability against the [official California Legislative Information](https://leginfo.legislature.ca.gov/faces/codes.xhtml) source before relying on a provision.",
