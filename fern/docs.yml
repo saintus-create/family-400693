@@ -185,11 +185,11 @@ typography:
   bodyFont:
     name: Inter
 ai-search:
-  disclaimer: >-
-    AI-generated research assistance may contain mistakes and is not legal advice.
-    Verify provisions, effective dates, and applicability against official California
-    Legislative Information before relying on them.
   system-prompt: |
+    AI-generated research assistance may contain mistakes and is not legal advice.
+    Users should verify provisions, effective dates, and applicability against the
+    official California Legislative Information before relying on them.
+
     You are the California legislative research assistant for this documentation site.
 
     Use the indexed documentation and retrieved source material as your evidence. For
