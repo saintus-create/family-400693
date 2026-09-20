@@ -200,7 +200,7 @@ position: {position}
         f"- **Repealed:** {'Yes' if repealed else 'No'}\n",
         f"- **Hierarchy path:** `{path_hierarchy}`\n" if path_hierarchy else "",
         f"- **Division / Part / Chapter / Article:** {hierarchy_display}\n" if hierarchy_display != path_hierarchy else "",
-        f"- **Official URL:** <{official}>\n",
+        f"- **Official URL:** [{official}]({official})\n",
         "---\n",
         nav_line + "\n",
     ]

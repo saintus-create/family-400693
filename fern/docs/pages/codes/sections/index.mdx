@@ -21,16 +21,8 @@ Each section is a first-class Fern page with:
 - Previous / next navigation in statutory order
 
 <Note>
-Dated research snapshot — always verify against the [official California Legislative Information](https://leginfo.legislature.ca.gov/faces/codes.xhtml) source. Run `python3 scripts/generate_fern_sections_mdx.py` to (re)generate the full tree.
+Dated research snapshot — always verify against the [official California Legislative Information](https://leginfo.legislature.ca.gov/faces/codes.xhtml) source.
 </Note>
-
-## Demo in this branch
-
-This branch commits **FAM (1,636) + CONS (372) = 2,008 MDX** as a fast preview demo. CI regenerates the full 162k before every `fern check` / `fern generate` via `.github/workflows/*.yml` (`python3 scripts/generate_fern_sections_mdx.py --clean`). To commit every section locally:
-
-```bash
-python3 scripts/generate_fern_sections_mdx.py --clean
-```
 
 ## How to use
 
