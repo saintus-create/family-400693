@@ -1,0 +1,39 @@
+name: Materialize TXT files as MDX
+
+on:
+  push:
+    paths:
+      - '.github/workflows/materialize-txt-as-mdx.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Convert every root TXT file to MDX
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          root = Path(".")
+          for src in sorted(root.glob("*.txt")):
+              code = src.stem.upper()
+              text = src.read_text(encoding="utf-8")
+              # Mechanical conversion only: frontmatter wrapper + original TXT body unchanged.
+              mdx = "---\n" + f'title: "{code}"\n' + f'slug: codes/{code.lower()}\n' + "---\n\n" + text
+              src.with_suffix(".mdx").write_text(mdx, encoding="utf-8")
+
+      - name: Commit MDX files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.mdx'
+          git commit -m "Convert California code TXT files to MDX" || exit 0
+          git push
