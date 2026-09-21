@@ -1,4 +1,5 @@
 name: fern-check
+
 on:
   pull_request:
   push:
@@ -10,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "lts/*"
+          node-version: "24"
 
-      - name: Install Fern CLI tool
+      - name: Setup Fern CLI
         uses: fern-api/setup-fern-cli@v1
 
       - name: Check API is valid
