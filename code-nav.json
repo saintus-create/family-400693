@@ -1,0 +1,722 @@
+[
+ {
+  "code": "CONS",
+  "name": "California Constitution",
+  "slug": "codes/cons",
+  "sections": 372,
+  "updated": "December 17, 2025",
+  "entries": [
+   {
+    "slug": "codes/cons/art-i-art-xxxv",
+    "title": "California Constitution: Article I\u2013XXXV",
+    "path": "pages/codes/cons/art-i-art-xxxv.mdx",
+    "sections": 35
+   }
+  ]
+ },
+ {
+  "code": "BPC",
+  "name": "Business and Professions Code",
+  "slug": "codes/bpc",
+  "sections": 10521,
+  "updated": "July 21, 2026",
+  "entries": [
+   {
+    "slug": "codes/bpc/div-1-div-1.5",
+    "title": "Business and Professions Code: Division 1\u20131.5",
+    "path": "pages/codes/bpc/div-1-div-1.5.mdx",
+    "sections": 243
+   },
+   {
+    "slug": "codes/bpc/div-2",
+    "title": "Business and Professions Code: Division 2. HEALING ARTS",
+    "path": "pages/codes/bpc/div-2.mdx",
+    "sections": 3060
+   },
+   {
+    "slug": "codes/bpc/div-3",
+    "title": "Business and Professions Code: Division 3. PROFESSIONS AND VOCATIONS GENERALLY",
+    "path": "pages/codes/bpc/div-3.mdx",
+    "sections": 3180
+   },
+   {
+    "slug": "codes/bpc/div-4-div-8.6",
+    "title": "Business and Professions Code: Division 4\u20138.6",
+    "path": "pages/codes/bpc/div-4-div-8.6.mdx",
+    "sections": 589
+   },
+   {
+    "slug": "codes/bpc/div-9-div-10",
+    "title": "Business and Professions Code: Division 9\u201310",
+    "path": "pages/codes/bpc/div-9-div-10.mdx",
+    "sections": 737
+   }
+  ]
+ },
+ {
+  "code": "CIV",
+  "name": "Civil Code",
+  "slug": "codes/civ",
+  "sections": 4040,
+  "updated": "August 26, 2026",
+  "entries": [
+   {
+    "slug": "codes/civ/title-of-title-4",
+    "title": "Civil Code: Title OF\u20134",
+    "path": "pages/codes/civ/title-of-title-4.mdx",
+    "sections": 188
+   },
+   {
+    "slug": "codes/civ/title-5-title-3",
+    "title": "Civil Code: Title 5\u20133",
+    "path": "pages/codes/civ/title-5-title-3.mdx",
+    "sections": 236
+   }
+  ]
+ },
+ {
+  "code": "CCP",
+  "name": "Code of Civil Procedure",
+  "slug": "codes/ccp",
+  "sections": 3410,
+  "updated": "July 10, 2026",
+  "entries": [
+   {
+    "slug": "codes/ccp/title-of-title-7",
+    "title": "Code of Civil Procedure: Title OF\u20137",
+    "path": "pages/codes/ccp/title-of-title-7.mdx",
+    "sections": 40
+   }
+  ]
+ },
+ {
+  "code": "COM",
+  "name": "Commercial Code",
+  "slug": "codes/com",
+  "sections": 669,
+  "updated": "November 27, 2025",
+  "entries": [
+   {
+    "slug": "codes/com/div-1-div-17",
+    "title": "Commercial Code: Division 1\u201317",
+    "path": "pages/codes/com/div-1-div-17.mdx",
+    "sections": 23
+   }
+  ]
+ },
+ {
+  "code": "CORP",
+  "name": "Corporations Code",
+  "slug": "codes/corp",
+  "sections": 2433,
+  "updated": "November 27, 2025",
+  "entries": [
+   {
+    "slug": "codes/corp/title-1-title-10",
+    "title": "Corporations Code: Title 1\u201310",
+    "path": "pages/codes/corp/title-1-title-10.mdx",
+    "sections": 1519
+   }
+  ]
+ },
+ {
+  "code": "EDC",
+  "name": "Education Code",
+  "slug": "codes/edc",
+  "sections": 11569,
+  "updated": "July 18, 2026",
+  "entries": [
+   {
+    "slug": "codes/edc/title-1/div-1/part-1-part-12",
+    "title": "Education Code: Title 1. GENERAL EDUCATION CODE PROVISIONS \u2014 Division 1. GENERAL EDUCATION CODE PROVISIONS \u2014 Part 1\u201312",
+    "path": "pages/codes/edc/part-1-part-12.mdx",
+    "sections": 161
+   },
+   {
+    "slug": "codes/edc/title-1/div-1/part-13-part-19.6",
+    "title": "Education Code: Title 1. GENERAL EDUCATION CODE PROVISIONS \u2014 Division 1. GENERAL EDUCATION CODE PROVISIONS \u2014 Part 13\u201319.6",
+    "path": "pages/codes/edc/part-13-part-19.6.mdx",
+    "sections": 730
+   },
+   {
+    "slug": "codes/edc/title-2/div-2-div-3",
+    "title": "Education Code: Title 2. ELEMENTARY AND SECONDARY EDUCATION \u2014 Division 2\u20133",
+    "path": "pages/codes/edc/div-2-div-3.mdx",
+    "sections": 265
+   },
+   {
+    "slug": "codes/edc/title-2/div-4",
+    "title": "Education Code: Title 2. ELEMENTARY AND SECONDARY EDUCATION \u2014 Division 4. INSTRUCTION AND SERVICES",
+    "path": "pages/codes/edc/div-4.mdx",
+    "sections": 2129
+   },
+   {
+    "slug": "codes/edc/title-3/div-5-div-7",
+    "title": "Education Code: Title 3. POSTSECONDARY EDUCATION \u2014 Division 5\u20137",
+    "path": "pages/codes/edc/div-5-div-7.mdx",
+    "sections": 919
+   },
+   {
+    "slug": "codes/edc/title-3/div-8-div-14",
+    "title": "Education Code: Title 3. POSTSECONDARY EDUCATION \u2014 Division 8\u201314",
+    "path": "pages/codes/edc/div-8-div-14.mdx",
+    "sections": 429
+   }
+  ]
+ },
+ {
+  "code": "ELEC",
+  "name": "Elections Code",
+  "slug": "codes/elec",
+  "sections": 2376,
+  "updated": "May 29, 2026",
+  "entries": [
+   {
+    "slug": "codes/elec/div-0.5-div-21",
+    "title": "Elections Code: Division 0.5\u201321",
+    "path": "pages/codes/elec/div-0.5-div-21.mdx",
+    "sections": 113
+   }
+  ]
+ },
+ {
+  "code": "EVID",
+  "name": "Evidence Code",
+  "slug": "codes/evid",
+  "sections": 506,
+  "updated": "November 27, 2025",
+  "entries": [
+   {
+    "slug": "codes/evid/div-1-div-11",
+    "title": "Evidence Code: Division 1\u201311",
+    "path": "pages/codes/evid/div-1-div-11.mdx",
+    "sections": 12
+   }
+  ]
+ },
+ {
+  "code": "FAM",
+  "name": "Family Code",
+  "slug": "codes/fam",
+  "sections": 1636,
+  "updated": "November 27, 2025",
+  "entries": [
+   {
+    "slug": "codes/fam/div-1-div-20",
+    "title": "Family Code: Division 1\u201320",
+    "path": "pages/codes/fam/div-1-div-20.mdx",
+    "sections": 41
+   }
+  ]
+ },
+ {
+  "code": "FIN",
+  "name": "Financial Code",
+  "slug": "codes/fin",
+  "sections": 3320,
+  "updated": "July 10, 2026",
+  "entries": [
+   {
+    "slug": "codes/fin/div-1-div-26",
+    "title": "Financial Code: Division 1\u201326",
+    "path": "pages/codes/fin/div-1-div-26.mdx",
+    "sections": 283
+   }
+  ]
+ },
+ {
+  "code": "FGC",
+  "name": "Fish and Game Code",
+  "slug": "codes/fgc",
+  "sections": 2297,
+  "updated": "November 27, 2025",
+  "entries": [
+   {
+    "slug": "codes/fgc/div-0.5-div-13.5",
+    "title": "Fish and Game Code: Division 0.5\u201313.5",
+    "path": "pages/codes/fgc/div-0.5-div-13.5.mdx",
+    "sections": 77
+   }
+  ]
+ },
+ {
+  "code": "FAC",
+  "name": "Food and Agricultural Code",
+  "slug": "codes/fac",
+  "sections": 9663,
+  "updated": "July 17, 2026",
+  "entries": [
+   {
+    "slug": "codes/fac/div-1-div-21",
+    "title": "Food and Agricultural Code: Division 1\u201321",
+    "path": "pages/codes/fac/div-1-div-21.mdx",
+    "sections": 224
+   },
+   {
+    "slug": "codes/fac/div-22-div-25",
+    "title": "Food and Agricultural Code: Division 22\u201325",
+    "path": "pages/codes/fac/div-22-div-25.mdx",
+    "sections": 3076
+   }
+  ]
+ },
+ {
+  "code": "GOV",
+  "name": "Government Code",
+  "slug": "codes/gov",
+  "sections": 21863,
+  "updated": "September 02, 2026",
+  "entries": [
+   {
+    "slug": "codes/gov/title-1",
+    "title": "Government Code: Title 1. GENERAL",
+    "path": "pages/codes/gov/title-1.mdx",
+    "sections": 2446
+   },
+   {
+    "slug": "codes/gov/title-2/div-1-div-2",
+    "title": "Government Code: Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA \u2014 Division 1\u20132",
+    "path": "pages/codes/gov/div-1-div-2.mdx",
+    "sections": 1173
+   },
+   {
+    "slug": "codes/gov/title-2/div-3/part-1-ch-3.15",
+    "title": "Government Code: Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA \u2014 Division 3. EXECUTIVE DEPARTMENT \u2014 Part 1\u20133.15",
+    "path": "pages/codes/gov/part-1-ch-3.15.mdx",
+    "sections": 0
+   },
+   {
+    "slug": "codes/gov/title-2/div-3/ch-4-ch-7",
+    "title": "Government Code: Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA \u2014 Division 3. EXECUTIVE DEPARTMENT \u2014 Chapter 4\u20137",
+    "path": "pages/codes/gov/ch-4-ch-7.mdx",
+    "sections": 10
+   },
+   {
+    "slug": "codes/gov/title-2/div-4-div-5",
+    "title": "Government Code: Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA \u2014 Division 4\u20135",
+    "path": "pages/codes/gov/div-4-div-5.mdx",
+    "sections": 708
+   },
+   {
+    "slug": "codes/gov/title-3-title-4",
+    "title": "Government Code: Title 3\u20134",
+    "path": "pages/codes/gov/title-3-title-4.mdx",
+    "sections": 3349
+   },
+   {
+    "slug": "codes/gov/title-5-title-6.7",
+    "title": "Government Code: Title 5\u20136.7",
+    "path": "pages/codes/gov/title-5-title-6.7.mdx",
+    "sections": 3179
+   },
+   {
+    "slug": "codes/gov/title-6.8-title-7.97",
+    "title": "Government Code: Title 6.8\u20137.97",
+    "path": "pages/codes/gov/title-6.8-title-7.97.mdx",
+    "sections": 40
+   },
+   {
+    "slug": "codes/gov/title-8-title-25",
+    "title": "Government Code: Title 8\u201325",
+    "path": "pages/codes/gov/title-8-title-25.mdx",
+    "sections": 1081
+   }
+  ]
+ },
+ {
+  "code": "HNC",
+  "name": "Harbors and Navigation Code",
+  "slug": "codes/hnc",
+  "sections": 1333,
+  "updated": "November 27, 2025",
+  "entries": [
+   {
+    "slug": "codes/hnc/div-1-div-8",
+    "title": "Harbors and Navigation Code: Division 1\u20138",
+    "path": "pages/codes/hnc/div-1-div-8.mdx",
+    "sections": 139
+   }
+  ]
+ },
+ {
+  "code": "HSC",
+  "name": "Health and Safety Code",
+  "slug": "codes/hsc",
+  "sections": 17730,
+  "updated": "July 17, 2026",
+  "entries": [
+   {
+    "slug": "codes/hsc/div-1-div-1.7",
+    "title": "Health and Safety Code: Division 1\u20131.7",
+    "path": "pages/codes/hsc/div-1-div-1.7.mdx",
+    "sections": 177
+   },
+   {
+    "slug": "codes/hsc/div-2/ch-1-ch-3",
+    "title": "Health and Safety Code: Division 2. LICENSING PROVISIONS \u2014 Chapter 1\u20133",
+    "path": "pages/codes/hsc/ch-1-ch-3.mdx",
+    "sections": 76
+   },
+   {
+    "slug": "codes/hsc/div-2/ch-3.01-ch-15",
+    "title": "Health and Safety Code: Division 2. LICENSING PROVISIONS \u2014 Chapter 3.01\u201315",
+    "path": "pages/codes/hsc/ch-3.01-ch-15.mdx",
+    "sections": 49
+   },
+   {
+    "slug": "codes/hsc/div-2.1-div-12.5",
+    "title": "Health and Safety Code: Division 2.1\u201312.5",
+    "path": "pages/codes/hsc/div-2.1-div-12.5.mdx",
+    "sections": 2
+   },
+   {
+    "slug": "codes/hsc/div-13-div-20",
+    "title": "Health and Safety Code: Division 13\u201320",
+    "path": "pages/codes/hsc/div-13-div-20.mdx",
+    "sections": 957
+   },
+   {
+    "slug": "codes/hsc/div-23-div-28",
+    "title": "Health and Safety Code: Division 23\u201328",
+    "path": "pages/codes/hsc/div-23-div-28.mdx",
+    "sections": 143
+   },
+   {
+    "slug": "codes/hsc/div-31-div-103",
+    "title": "Health and Safety Code: Division 31\u2013103",
+    "path": "pages/codes/hsc/div-31-div-103.mdx",
+    "sections": 1208
+   },
+   {
+    "slug": "codes/hsc/div-104-div-106",
+    "title": "Health and Safety Code: Division 104\u2013106",
+    "path": "pages/codes/hsc/div-104-div-106.mdx",
+    "sections": 2435
+   },
+   {
+    "slug": "codes/hsc/div-107-div-122",
+    "title": "Health and Safety Code: Division 107\u2013122",
+    "path": "pages/codes/hsc/div-107-div-122.mdx",
+    "sections": 447
+   }
+  ]
+ },
+ {
+  "code": "INS",
+  "name": "Insurance Code",
+  "slug": "codes/ins",
+  "sections": 4516,
+  "updated": "July 10, 2026",
+  "entries": [
+   {
+    "slug": "codes/ins/div-1",
+    "title": "Insurance Code: Division 1. GENERAL RULES GOVERNING INSURANCE",
+    "path": "pages/codes/ins/div-1.mdx",
+    "sections": 1769
+   },
+   {
+    "slug": "codes/ins/div-2/part-1-part-6.1",
+    "title": "Insurance Code: Division 2. CLASSES OF INSURANCE \u2014 Part 1\u20136.1",
+    "path": "pages/codes/ins/part-1-part-6.1.mdx",
+    "sections": 463
+   },
+   {
+    "slug": "codes/ins/div-2/part-6.2-part-9",
+    "title": "Insurance Code: Division 2. CLASSES OF INSURANCE \u2014 Part 6.2\u20139",
+    "path": "pages/codes/ins/part-6.2-part-9.mdx",
+    "sections": 105
+   },
+   {
+    "slug": "codes/ins/div-3-div-5",
+    "title": "Insurance Code: Division 3\u20135",
+    "path": "pages/codes/ins/div-3-div-5.mdx",
+    "sections": 123
+   }
+  ]
+ },
+ {
+  "code": "LAB",
+  "name": "Labor Code",
+  "slug": "codes/lab",
+  "sections": 2641,
+  "updated": "July 21, 2026",
+  "entries": [
+   {
+    "slug": "codes/lab/div-1-div-7",
+    "title": "Labor Code: Division 1\u20137",
+    "path": "pages/codes/lab/div-1-div-7.mdx",
+    "sections": 245
+   }
+  ]
+ },
+ {
+  "code": "MVC",
+  "name": "Military and Veterans Code",
+  "slug": "codes/mvc",
+  "sections": 1246,
+  "updated": "July 10, 2026",
+  "entries": [
+   {
+    "slug": "codes/mvc/div-1-div-8",
+    "title": "Military and Veterans Code: Division 1\u20138",
+    "path": "pages/codes/mvc/div-1-div-8.mdx",
+    "sections": 74
+   }
+  ]
+ },
+ {
+  "code": "PEN",
+  "name": "Penal Code",
+  "slug": "codes/pen",
+  "sections": 5754,
+  "updated": "July 21, 2026",
+  "entries": [
+   {
+    "slug": "codes/pen/title-of-title-7",
+    "title": "Penal Code: Title OF\u20137",
+    "path": "pages/codes/pen/title-of-title-7.mdx",
+    "sections": 34
+   },
+   {
+    "slug": "codes/pen/title-8-title-10.6",
+    "title": "Penal Code: Title 8\u201310.6",
+    "path": "pages/codes/pen/title-8-title-10.6.mdx",
+    "sections": 173
+   },
+   {
+    "slug": "codes/pen/title-11-title-4",
+    "title": "Penal Code: Title 11\u20134",
+    "path": "pages/codes/pen/title-11-title-4.mdx",
+    "sections": 8
+   }
+  ]
+ },
+ {
+  "code": "PROB",
+  "name": "Probate Code",
+  "slug": "codes/prob",
+  "sections": 2711,
+  "updated": "November 27, 2025",
+  "entries": [
+   {
+    "slug": "codes/prob/div-1-div-11",
+    "title": "Probate Code: Division 1\u201311",
+    "path": "pages/codes/prob/div-1-div-11.mdx",
+    "sections": 60
+   }
+  ]
+ },
+ {
+  "code": "PCC",
+  "name": "Public Contract Code",
+  "slug": "codes/pcc",
+  "sections": 1667,
+  "updated": "July 17, 2026",
+  "entries": [
+   {
+    "slug": "codes/pcc/div-1-div-2",
+    "title": "Public Contract Code: Division 1\u20132",
+    "path": "pages/codes/pcc/div-1-div-2.mdx",
+    "sections": 3
+   }
+  ]
+ },
+ {
+  "code": "PRC",
+  "name": "Public Resources Code",
+  "slug": "codes/prc",
+  "sections": 8188,
+  "updated": "August 29, 2026",
+  "entries": [
+   {
+    "slug": "codes/prc/div-1-div-12.1",
+    "title": "Public Resources Code: Division 1\u201312.1",
+    "path": "pages/codes/prc/div-1-div-12.1.mdx",
+    "sections": 179
+   },
+   {
+    "slug": "codes/prc/div-12.2-div-28",
+    "title": "Public Resources Code: Division 12.2\u201328",
+    "path": "pages/codes/prc/div-12.2-div-28.mdx",
+    "sections": 27
+   },
+   {
+    "slug": "codes/prc/div-30-div-50",
+    "title": "Public Resources Code: Division 30\u201350",
+    "path": "pages/codes/prc/div-30-div-50.mdx",
+    "sections": 1266
+   }
+  ]
+ },
+ {
+  "code": "PUC",
+  "name": "Public Utilities Code",
+  "slug": "codes/puc",
+  "sections": 7567,
+  "updated": "August 08, 2026",
+  "entries": [
+   {
+    "slug": "codes/puc/div-1-div-9",
+    "title": "Public Utilities Code: Division 1\u20139",
+    "path": "pages/codes/puc/div-1-div-9.mdx",
+    "sections": 1428
+   },
+   {
+    "slug": "codes/puc/div-10-div-25",
+    "title": "Public Utilities Code: Division 10\u201325",
+    "path": "pages/codes/puc/div-10-div-25.mdx",
+    "sections": 3352
+   }
+  ]
+ },
+ {
+  "code": "RTC",
+  "name": "Revenue and Taxation Code",
+  "slug": "codes/rtc",
+  "sections": 7366,
+  "updated": "August 19, 2026",
+  "entries": [
+   {
+    "slug": "codes/rtc/div-1",
+    "title": "Revenue and Taxation Code: Division 1. PROPERTY TAXATION",
+    "path": "pages/codes/rtc/div-1.mdx",
+    "sections": 1787
+   },
+   {
+    "slug": "codes/rtc/div-2/part-1-part-10.8",
+    "title": "Revenue and Taxation Code: Division 2. OTHER TAXES \u2014 Part 1\u201310.8",
+    "path": "pages/codes/rtc/part-1-part-10.8.mdx",
+    "sections": 558
+   },
+   {
+    "slug": "codes/rtc/div-2/part-11-part-32",
+    "title": "Revenue and Taxation Code: Division 2. OTHER TAXES \u2014 Part 11\u201332",
+    "path": "pages/codes/rtc/part-11-part-32.mdx",
+    "sections": 589
+   }
+  ]
+ },
+ {
+  "code": "SHC",
+  "name": "Streets and Highways Code",
+  "slug": "codes/shc",
+  "sections": 4631,
+  "updated": "July 17, 2026",
+  "entries": [
+   {
+    "slug": "codes/shc/div-1-div-18",
+    "title": "Streets and Highways Code: Division 1\u201318",
+    "path": "pages/codes/shc/div-1-div-18.mdx",
+    "sections": 933
+   }
+  ]
+ },
+ {
+  "code": "UIC",
+  "name": "Unemployment Insurance Code",
+  "slug": "codes/uic",
+  "sections": 1120,
+  "updated": "July 17, 2026",
+  "entries": [
+   {
+    "slug": "codes/uic/div-1-div-11",
+    "title": "Unemployment Insurance Code: Division 1\u201311",
+    "path": "pages/codes/uic/div-1-div-11.mdx",
+    "sections": 866
+   }
+  ]
+ },
+ {
+  "code": "VEH",
+  "name": "Vehicle Code",
+  "slug": "codes/veh",
+  "sections": 3824,
+  "updated": "July 17, 2026",
+  "entries": [
+   {
+    "slug": "codes/veh/div-1-div-13",
+    "title": "Vehicle Code: Division 1\u201313",
+    "path": "pages/codes/veh/div-1-div-13.mdx",
+    "sections": 277
+   },
+   {
+    "slug": "codes/veh/div-14-div-18",
+    "title": "Vehicle Code: Division 14\u201318",
+    "path": "pages/codes/veh/div-14-div-18.mdx",
+    "sections": 18
+   }
+  ]
+ },
+ {
+  "code": "WAT",
+  "name": "Water Code",
+  "slug": "codes/wat",
+  "sections": 10131,
+  "updated": "July 17, 2026",
+  "entries": [
+   {
+    "slug": "codes/wat/div-1-div-12",
+    "title": "Water Code: Division 1\u201312",
+    "path": "pages/codes/wat/div-1-div-12.mdx",
+    "sections": 259
+   },
+   {
+    "slug": "codes/wat/div-13-div-35",
+    "title": "Water Code: Division 13\u201335",
+    "path": "pages/codes/wat/div-13-div-35.mdx",
+    "sections": 878
+   }
+  ]
+ },
+ {
+  "code": "WIC",
+  "name": "Welfare and Institutions Code",
+  "slug": "codes/wic",
+  "sections": 7224,
+  "updated": "July 21, 2026",
+  "entries": [
+   {
+    "slug": "codes/wic/div-1-div-4.7",
+    "title": "Welfare and Institutions Code: Division 1\u20134.7",
+    "path": "pages/codes/wic/div-1-div-4.7.mdx",
+    "sections": 41
+   },
+   {
+    "slug": "codes/wic/div-5-div-8.5",
+    "title": "Welfare and Institutions Code: Division 5\u20138.5",
+    "path": "pages/codes/wic/div-5-div-8.5.mdx",
+    "sections": 639
+   },
+   {
+    "slug": "codes/wic/div-9/part-1-ch-6.5",
+    "title": "Welfare and Institutions Code: Division 9. PUBLIC SOCIAL SERVICES \u2014 Part 1\u20136.5",
+    "path": "pages/codes/wic/part-1-ch-6.5.mdx",
+    "sections": 0
+   },
+   {
+    "slug": "codes/wic/div-9/ch-7/art-1-art-6.2",
+    "title": "Welfare and Institutions Code: Division 9. PUBLIC SOCIAL SERVICES \u2014 Chapter 7. Basic Health Care \u2014 Article 1\u20136.2",
+    "path": "pages/codes/wic/art-1-art-6.2.mdx",
+    "sections": 249
+   },
+   {
+    "slug": "codes/wic/div-9/ch-7/art-6.3-art-7.2",
+    "title": "Welfare and Institutions Code: Division 9. PUBLIC SOCIAL SERVICES \u2014 Chapter 7. Basic Health Care \u2014 Article 6.3\u20137.2",
+    "path": "pages/codes/wic/art-6.3-art-7.2.mdx",
+    "sections": 18
+   },
+   {
+    "slug": "codes/wic/div-9/ch-7.5-ch-20",
+    "title": "Welfare and Institutions Code: Division 9. PUBLIC SOCIAL SERVICES \u2014 Chapter 7.5\u201320",
+    "path": "pages/codes/wic/ch-7.5-ch-20.mdx",
+    "sections": 44
+   },
+   {
+    "slug": "codes/wic/div-10-div-25",
+    "title": "Welfare and Institutions Code: Division 10\u201325",
+    "path": "pages/codes/wic/div-10-div-25.mdx",
+    "sections": 133
+   }
+  ]
+ }
+]

@@ -1,0 +1,63 @@
+---
+title: California Codes
+description: The complete section-level California Constitution and Codes — 29 codes plus the Constitution, full statutory text.
+slug: codes
+---
+
+# California Codes
+
+**29 California statutory codes plus the California Constitution** — **162,324 sections** of full statutory text, organized by each code's official divisions.
+
+## How the site is organized
+
+- Every code has an **overview page** (section counts, snapshot date, and dataset downloads) and one or more **full-text pages** split at the code's own division boundaries.
+- **Corpus search** at [Search the California Code Corpus](/codes/search) streams the selected code on demand and ranks matches by citation and text.
+- **Ask AI** is indexed against the same snapshot, so natural-language research questions are answered with citations.
+- **Bulk data** for every code is downloadable as `JSONL.gz` from the overview pages and the [corpus manifest](https://github.com/saintus-create/family-400693/blob/main/fern/assets/corpus/manifest.json).
+
+<Note>
+This is a dated research snapshot. Verify current text, effective dates, and applicability against the [official California Legislative Information code search](https://leginfo.legislature.ca.gov/faces/codes.xhtml). This library is not legal advice.
+</Note>
+
+## Code catalog
+
+| Code | Sections | Source update |
+| --- | ---: | --- |
+| [California Constitution](/codes/cons) | 372 | December 17, 2025 |
+| [Business and Professions Code](/codes/bpc) | 10,521 | July 21, 2026 |
+| [Civil Code](/codes/civ) | 4,040 | August 26, 2026 |
+| [Code of Civil Procedure](/codes/ccp) | 3,410 | July 10, 2026 |
+| [Commercial Code](/codes/com) | 669 | November 27, 2025 |
+| [Corporations Code](/codes/corp) | 2,433 | November 27, 2025 |
+| [Education Code](/codes/edc) | 11,569 | July 18, 2026 |
+| [Elections Code](/codes/elec) | 2,376 | May 29, 2026 |
+| [Evidence Code](/codes/evid) | 506 | November 27, 2025 |
+| [Family Code](/codes/fam) | 1,636 | November 27, 2025 |
+| [Financial Code](/codes/fin) | 3,320 | July 10, 2026 |
+| [Fish and Game Code](/codes/fgc) | 2,297 | November 27, 2025 |
+| [Food and Agricultural Code](/codes/fac) | 9,663 | July 17, 2026 |
+| [Government Code](/codes/gov) | 21,863 | September 2, 2026 |
+| [Harbors and Navigation Code](/codes/hnc) | 1,333 | November 27, 2025 |
+| [Health and Safety Code](/codes/hsc) | 17,730 | July 17, 2026 |
+| [Insurance Code](/codes/ins) | 4,516 | July 10, 2026 |
+| [Labor Code](/codes/lab) | 2,641 | July 21, 2026 |
+| [Military and Veterans Code](/codes/mvc) | 1,246 | July 10, 2026 |
+| [Penal Code](/codes/pen) | 5,754 | July 21, 2026 |
+| [Probate Code](/codes/prob) | 2,711 | November 27, 2025 |
+| [Public Contract Code](/codes/pcc) | 1,667 | July 17, 2026 |
+| [Public Resources Code](/codes/prc) | 8,188 | August 29, 2026 |
+| [Public Utilities Code](/codes/puc) | 7,567 | August 8, 2026 |
+| [Revenue and Taxation Code](/codes/rtc) | 7,366 | August 19, 2026 |
+| [Streets and Highways Code](/codes/shc) | 4,631 | July 17, 2026 |
+| [Unemployment Insurance Code](/codes/uic) | 1,120 | July 17, 2026 |
+| [Vehicle Code](/codes/veh) | 3,824 | July 17, 2026 |
+| [Water Code](/codes/wat) | 10,131 | July 17, 2026 |
+| [Welfare and Institutions Code](/codes/wic) | 7,224 | July 21, 2026 |
+
+## Regeneration
+
+```bash
+python3 scripts/generate_code_pages.py
+```
+
+Regenerates every code page from the compressed corpus in `fern/assets/corpus/` and emits `code-nav.json` (the navigation data used by `fern/docs.yml`).

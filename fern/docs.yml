@@ -7,12 +7,15 @@ instances:
         owner: saintus-create
         repo: family-400693
         branch: main
-      launch: dashboard
+      launch: github
+
+title: CA Leg Info | Documentation
+
 layout:
   searchbar-placement: header
   page-width: full
   tabs-placement: header
-title: CA Leg Info | Documentation
+
 tabs:
   home:
     display-name: Home
@@ -23,117 +26,373 @@ tabs:
   changelog:
     display-name: Changelog
     icon: clock
+
 navigation:
   - tab: home
     layout:
       - page: Home
-        path: docs/pages/welcome.mdx
+        path: pages/welcome.mdx
         slug: welcome
   - tab: docs
     layout:
       - section: Legal library
         contents:
           - page: California Codes
-            path: docs/pages/codes/index.mdx
+            path: pages/codes/index.mdx
             icon: fa-duotone fa-books
           - page: Search the California Code Corpus
-            path: docs/pages/codes/search.mdx
+            path: pages/codes/search.mdx
             icon: fa-duotone fa-magnifying-glass
       - section: California Codes
         contents:
-          - page: California Constitution
-            path: docs/pages/codes/cons.mdx
-          - page: Business and Professions Code
-            path: docs/pages/codes/bpc.mdx
-          - page: Civil Code
-            path: docs/pages/codes/civ.mdx
-          - page: Code of Civil Procedure
-            path: docs/pages/codes/ccp.mdx
-          - page: Commercial Code
-            path: docs/pages/codes/com.mdx
-          - page: Corporations Code
-            path: docs/pages/codes/corp.mdx
-          - page: Education Code
-            path: docs/pages/codes/edc.mdx
-          - page: Elections Code
-            path: docs/pages/codes/elec.mdx
-          - page: Evidence Code
-            path: docs/pages/codes/evid.mdx
-          - page: Family Code
-            path: docs/pages/codes/fam.mdx
-          - page: Financial Code
-            path: docs/pages/codes/fin.mdx
-          - page: Fish and Game Code
-            path: docs/pages/codes/fgc.mdx
-          - page: Food and Agricultural Code
-            path: docs/pages/codes/fac.mdx
-          - page: Government Code
-            path: docs/pages/codes/gov.mdx
-          - page: Harbors and Navigation Code
-            path: docs/pages/codes/hnc.mdx
-          - page: Health and Safety Code
-            path: docs/pages/codes/hsc.mdx
-          - page: Insurance Code
-            path: docs/pages/codes/ins.mdx
-          - page: Labor Code
-            path: docs/pages/codes/lab.mdx
-          - page: Military and Veterans Code
-            path: docs/pages/codes/mvc.mdx
-          - page: Penal Code
-            path: docs/pages/codes/pen.mdx
-          - page: Probate Code
-            path: docs/pages/codes/prob.mdx
-          - page: Public Contract Code
-            path: docs/pages/codes/pcc.mdx
-          - page: Public Resources Code
-            path: docs/pages/codes/prc.mdx
-          - page: Public Utilities Code
-            path: docs/pages/codes/puc.mdx
-          - page: Revenue and Taxation Code
-            path: docs/pages/codes/rtc.mdx
-          - page: Streets and Highways Code
-            path: docs/pages/codes/shc.mdx
-          - page: Unemployment Insurance Code
-            path: docs/pages/codes/uic.mdx
-          - page: Vehicle Code
-            path: docs/pages/codes/veh.mdx
-          - page: Water Code
-            path: docs/pages/codes/wat.mdx
-          - page: Welfare and Institutions Code
-            path: docs/pages/codes/wic.mdx
+        - section: "California Constitution"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/cons.mdx
+          - page: "Article I–XXXV"
+            path: pages/codes/cons/art-i-art-xxxv.mdx
+        - section: "Business and Professions Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/bpc.mdx
+          - page: "Division 1–1.5"
+            path: pages/codes/bpc/div-1-div-1.5.mdx
+          - page: "Division 2. HEALING ARTS"
+            path: pages/codes/bpc/div-2.mdx
+          - page: "Division 3. PROFESSIONS AND VOCATIONS GENERALLY"
+            path: pages/codes/bpc/div-3.mdx
+          - page: "Division 4–8.6"
+            path: pages/codes/bpc/div-4-div-8.6.mdx
+          - page: "Division 9–10"
+            path: pages/codes/bpc/div-9-div-10.mdx
+        - section: "Civil Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/civ.mdx
+          - page: "Title OF–4"
+            path: pages/codes/civ/title-of-title-4.mdx
+          - page: "Title 5–3"
+            path: pages/codes/civ/title-5-title-3.mdx
+        - section: "Code of Civil Procedure"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/ccp.mdx
+          - page: "Title OF–7"
+            path: pages/codes/ccp/title-of-title-7.mdx
+        - section: "Commercial Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/com.mdx
+          - page: "Division 1–17"
+            path: pages/codes/com/div-1-div-17.mdx
+        - section: "Corporations Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/corp.mdx
+          - page: "Title 1–10"
+            path: pages/codes/corp/title-1-title-10.mdx
+        - section: "Education Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/edc.mdx
+          - page: "Title 1. GENERAL EDUCATION CODE PROVISIONS — Division 1. GENERAL EDUCATION CODE PROVISIONS — Part 1–12"
+            path: pages/codes/edc/part-1-part-12.mdx
+          - page: "Title 1. GENERAL EDUCATION CODE PROVISIONS — Division 1. GENERAL EDUCATION CODE PROVISIONS — Part 13–19.6"
+            path: pages/codes/edc/part-13-part-19.6.mdx
+          - page: "Title 2. ELEMENTARY AND SECONDARY EDUCATION — Division 2–3"
+            path: pages/codes/edc/div-2-div-3.mdx
+          - page: "Title 2. ELEMENTARY AND SECONDARY EDUCATION — Division 4. INSTRUCTION AND SERVICES"
+            path: pages/codes/edc/div-4.mdx
+          - page: "Title 3. POSTSECONDARY EDUCATION — Division 5–7"
+            path: pages/codes/edc/div-5-div-7.mdx
+          - page: "Title 3. POSTSECONDARY EDUCATION — Division 8–14"
+            path: pages/codes/edc/div-8-div-14.mdx
+        - section: "Elections Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/elec.mdx
+          - page: "Division 0.5–21"
+            path: pages/codes/elec/div-0.5-div-21.mdx
+        - section: "Evidence Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/evid.mdx
+          - page: "Division 1–11"
+            path: pages/codes/evid/div-1-div-11.mdx
+        - section: "Family Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/fam.mdx
+          - page: "Division 1–20"
+            path: pages/codes/fam/div-1-div-20.mdx
+        - section: "Financial Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/fin.mdx
+          - page: "Division 1–26"
+            path: pages/codes/fin/div-1-div-26.mdx
+        - section: "Fish and Game Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/fgc.mdx
+          - page: "Division 0.5–13.5"
+            path: pages/codes/fgc/div-0.5-div-13.5.mdx
+        - section: "Food and Agricultural Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/fac.mdx
+          - page: "Division 1–21"
+            path: pages/codes/fac/div-1-div-21.mdx
+          - page: "Division 22–25"
+            path: pages/codes/fac/div-22-div-25.mdx
+        - section: "Government Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/gov.mdx
+          - page: "Title 1. GENERAL"
+            path: pages/codes/gov/title-1.mdx
+          - page: "Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA — Division 1–2"
+            path: pages/codes/gov/div-1-div-2.mdx
+          - page: "Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA — Division 3. EXECUTIVE DEPARTMENT — Part 1–3.15"
+            path: pages/codes/gov/part-1-ch-3.15.mdx
+          - page: "Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA — Division 3. EXECUTIVE DEPARTMENT — Chapter 4–7"
+            path: pages/codes/gov/ch-4-ch-7.mdx
+          - page: "Title 2. GOVERNMENT OF THE STATE OF CALIFORNIA — Division 4–5"
+            path: pages/codes/gov/div-4-div-5.mdx
+          - page: "Title 3–4"
+            path: pages/codes/gov/title-3-title-4.mdx
+          - page: "Title 5–6.7"
+            path: pages/codes/gov/title-5-title-6.7.mdx
+          - page: "Title 6.8–7.97"
+            path: pages/codes/gov/title-6.8-title-7.97.mdx
+          - page: "Title 8–25"
+            path: pages/codes/gov/title-8-title-25.mdx
+        - section: "Harbors and Navigation Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/hnc.mdx
+          - page: "Division 1–8"
+            path: pages/codes/hnc/div-1-div-8.mdx
+        - section: "Health and Safety Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/hsc.mdx
+          - page: "Division 1–1.7"
+            path: pages/codes/hsc/div-1-div-1.7.mdx
+          - page: "Division 2. LICENSING PROVISIONS — Chapter 1–3"
+            path: pages/codes/hsc/ch-1-ch-3.mdx
+          - page: "Division 2. LICENSING PROVISIONS — Chapter 3.01–15"
+            path: pages/codes/hsc/ch-3.01-ch-15.mdx
+          - page: "Division 2.1–12.5"
+            path: pages/codes/hsc/div-2.1-div-12.5.mdx
+          - page: "Division 13–20"
+            path: pages/codes/hsc/div-13-div-20.mdx
+          - page: "Division 23–28"
+            path: pages/codes/hsc/div-23-div-28.mdx
+          - page: "Division 31–103"
+            path: pages/codes/hsc/div-31-div-103.mdx
+          - page: "Division 104–106"
+            path: pages/codes/hsc/div-104-div-106.mdx
+          - page: "Division 107–122"
+            path: pages/codes/hsc/div-107-div-122.mdx
+        - section: "Insurance Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/ins.mdx
+          - page: "Division 1. GENERAL RULES GOVERNING INSURANCE"
+            path: pages/codes/ins/div-1.mdx
+          - page: "Division 2. CLASSES OF INSURANCE — Part 1–6.1"
+            path: pages/codes/ins/part-1-part-6.1.mdx
+          - page: "Division 2. CLASSES OF INSURANCE — Part 6.2–9"
+            path: pages/codes/ins/part-6.2-part-9.mdx
+          - page: "Division 3–5"
+            path: pages/codes/ins/div-3-div-5.mdx
+        - section: "Labor Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/lab.mdx
+          - page: "Division 1–7"
+            path: pages/codes/lab/div-1-div-7.mdx
+        - section: "Military and Veterans Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/mvc.mdx
+          - page: "Division 1–8"
+            path: pages/codes/mvc/div-1-div-8.mdx
+        - section: "Penal Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/pen.mdx
+          - page: "Title OF–7"
+            path: pages/codes/pen/title-of-title-7.mdx
+          - page: "Title 8–10.6"
+            path: pages/codes/pen/title-8-title-10.6.mdx
+          - page: "Title 11–4"
+            path: pages/codes/pen/title-11-title-4.mdx
+        - section: "Probate Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/prob.mdx
+          - page: "Division 1–11"
+            path: pages/codes/prob/div-1-div-11.mdx
+        - section: "Public Contract Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/pcc.mdx
+          - page: "Division 1–2"
+            path: pages/codes/pcc/div-1-div-2.mdx
+        - section: "Public Resources Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/prc.mdx
+          - page: "Division 1–12.1"
+            path: pages/codes/prc/div-1-div-12.1.mdx
+          - page: "Division 12.2–28"
+            path: pages/codes/prc/div-12.2-div-28.mdx
+          - page: "Division 30–50"
+            path: pages/codes/prc/div-30-div-50.mdx
+        - section: "Public Utilities Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/puc.mdx
+          - page: "Division 1–9"
+            path: pages/codes/puc/div-1-div-9.mdx
+          - page: "Division 10–25"
+            path: pages/codes/puc/div-10-div-25.mdx
+        - section: "Revenue and Taxation Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/rtc.mdx
+          - page: "Division 1. PROPERTY TAXATION"
+            path: pages/codes/rtc/div-1.mdx
+          - page: "Division 2. OTHER TAXES — Part 1–10.8"
+            path: pages/codes/rtc/part-1-part-10.8.mdx
+          - page: "Division 2. OTHER TAXES — Part 11–32"
+            path: pages/codes/rtc/part-11-part-32.mdx
+        - section: "Streets and Highways Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/shc.mdx
+          - page: "Division 1–18"
+            path: pages/codes/shc/div-1-div-18.mdx
+        - section: "Unemployment Insurance Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/uic.mdx
+          - page: "Division 1–11"
+            path: pages/codes/uic/div-1-div-11.mdx
+        - section: "Vehicle Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/veh.mdx
+          - page: "Division 1–13"
+            path: pages/codes/veh/div-1-div-13.mdx
+          - page: "Division 14–18"
+            path: pages/codes/veh/div-14-div-18.mdx
+        - section: "Water Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/wat.mdx
+          - page: "Division 1–12"
+            path: pages/codes/wat/div-1-div-12.mdx
+          - page: "Division 13–35"
+            path: pages/codes/wat/div-13-div-35.mdx
+        - section: "Welfare and Institutions Code"
+          collapsed: true
+          contents:
+          - page: Overview
+            path: pages/codes/wic.mdx
+          - page: "Division 1–4.7"
+            path: pages/codes/wic/div-1-div-4.7.mdx
+          - page: "Division 5–8.5"
+            path: pages/codes/wic/div-5-div-8.5.mdx
+          - page: "Division 9. PUBLIC SOCIAL SERVICES — Part 1–6.5"
+            path: pages/codes/wic/part-1-ch-6.5.mdx
+          - page: "Division 9. PUBLIC SOCIAL SERVICES — Chapter 7. Basic Health Care — Article 1–6.2"
+            path: pages/codes/wic/art-1-art-6.2.mdx
+          - page: "Division 9. PUBLIC SOCIAL SERVICES — Chapter 7. Basic Health Care — Article 6.3–7.2"
+            path: pages/codes/wic/art-6.3-art-7.2.mdx
+          - page: "Division 9. PUBLIC SOCIAL SERVICES — Chapter 7.5–20"
+            path: pages/codes/wic/ch-7.5-ch-20.mdx
+          - page: "Division 10–25"
+            path: pages/codes/wic/div-10-div-25.mdx
       - section: Research
         contents:
           - page: Family Code Overview
-            path: docs/pages/family-code-overview.mdx
+            path: pages/family-code-overview.mdx
             icon: fa-duotone fa-book-open
           - page: AI Research Behavior
-            path: docs/pages/ai-research.mdx
+            path: pages/ai-research.mdx
             icon: fa-duotone fa-wand-magic-sparkles
           - page: Court Rules
-            path: docs/pages/court-rules-overview.mdx
+            path: pages/court-rules-overview.mdx
             icon: fa-duotone fa-scale-balanced
           - page: Case Law
-            path: docs/pages/case-law.mdx
+            path: pages/case-law.mdx
             icon: fa-duotone fa-landmark
           - page: Bills and Measures
-            path: docs/pages/bills-and-measures.mdx
+            path: pages/bills-and-measures.mdx
             icon: fa-duotone fa-file-signature
           - page: Invitations to Comment
-            path: docs/pages/invitations-to-comment.mdx
+            path: pages/invitations-to-comment.mdx
             icon: fa-duotone fa-comments
           - page: Public Records
-            path: docs/pages/library/public-records/public-records.mdx
+            path: pages/library/public-records/public-records.mdx
             icon: fa-duotone fa-folder-open
           - page: Support
-            path: docs/pages/support.mdx
+            path: pages/support.mdx
             icon: fa-duotone fa-circle-question
   - tab: changelog
     layout:
-      - changelog: docs/changelog
+      - changelog: pages/changelog
+
 navbar-links:
   - type: filled
     text: Edit
     url: https://dashboard.buildwithfern.com
+
+logo:
+  light: assets/logo.svg
+  dark: assets/logo-dark.svg
+  height: 20
+  href: https://leginfo.legislature.ca.gov/
+
+favicon: assets/favicon.svg
+
+css:
+  - assets/styles.css
+  - assets/theme.css
+js: custom.js
+
 colors:
   accent-primary:
     light: "#005A8C"
@@ -144,25 +403,18 @@ colors:
   border:
     light: "#CBD0D3"
     dark: "#282D31"
+
 theme:
   page-actions: toolbar
   footer-nav: minimal
   tabs: bubble
-logo:
-  dark: docs/assets/logo-dark.svg
-  light: docs/assets/logo.svg
-  height: 20
-  href: https://leginfo.legislature.ca.gov/
-favicon: docs/assets/favicon.svg
-css:
-  - styles.css
-  - docs/assets/onboarding-theme.css
-js: custom.js
+
 typography:
   headingsFont:
     name: Inter
   bodyFont:
     name: Inter
+
 ai-search:
   system-prompt: |
     AI-generated research assistance may contain mistakes and is not legal advice.
