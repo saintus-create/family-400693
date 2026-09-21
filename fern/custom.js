@@ -565,9 +565,9 @@ function isDarkMode() {
   async function run(query) {
     var codes = select.value ? [select.value] : manifest.datasets.map(function (x) { return x.abbr; });
     var all = [];
-    status.textContent = 'Searching ' + codes.length + ' code dataset' + (codes.length === 1 ? '' : 's') + '…';
     results.textContent = '';
     for (var i = 0; i < codes.length; i++) {
+      status.textContent = 'Searching ' + names[codes[i]] + ' (' + (i + 1) + ' of ' + codes.length + ')…';
       var found = await scan(codes[i], query, 12);
       all = all.concat(found).sort(function (a, b) { return b.value - a.value; }).slice(0, 20);
     }

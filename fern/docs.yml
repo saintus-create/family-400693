@@ -17,9 +17,6 @@ tabs:
   home:
     display-name: Home
     icon: home
-  API Reference:
-    display-name: API Reference
-    icon: puzzle
   docs:
     display-name: Docs
     icon: book
@@ -104,18 +101,11 @@ navigation:
             path: docs/pages/codes/wat.mdx
           - page: Welfare and Institutions Code
             path: docs/pages/codes/wic.mdx
-      - section: Code Sections (MDX)
-        icon: fa-duotone fa-file-lines
-        collapsed: true
-        contents:
-          - page: MDX transfer guide
-            path: docs/pages/codes/mdx-transfer-guide.mdx
-          - folder: docs/pages/codes/sections
-            title: Code Sections
-            slug: codes/sections
-            title-source: frontmatter
       - section: Research
         contents:
+          - page: Family Code Overview
+            path: docs/pages/family-code-overview.mdx
+            icon: fa-duotone fa-book-open
           - page: AI Research Behavior
             path: docs/pages/ai-research.mdx
             icon: fa-duotone fa-wand-magic-sparkles
@@ -137,17 +127,6 @@ navigation:
           - page: Support
             path: docs/pages/support.mdx
             icon: fa-duotone fa-circle-question
-  - tab: API Reference
-    layout:
-      - section: Existing references
-        contents:
-          - page: API reference sources
-            path: docs/pages/api-reference-overview.mdx
-            icon: fa-duotone fa-book
-      - api: OpenAPI reference
-        api-name: example-openapi
-      - api: AsyncAPI reference
-        api-name: example-asyncapi
   - tab: changelog
     layout:
       - changelog: docs/changelog
